@@ -1,0 +1,585 @@
+/* 1. GLOBAL FOUNDATIONS  */
+.admin_stat_m_revenue_wrapper {
+  padding: 40px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #1e293b;
+  box-sizing: border-box;
+  zoom: 0.7;
+  width: 125%;
+  max-width: 100%;
+  padding-top: 0px;
+  animation: admin_stat_m_FadeIn 0.6s ease-in-out;
+}
+
+@keyframes admin_stat_m_FadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes admin_stat_m_pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* 2. HEADER & NAVIGATION SYSTEM */
+.admin_stat_m_revenue_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin_stat_m_header_text h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 800;
+}
+.admin_stat_m_header_text h1 span {
+  color: #007acc;
+}
+.admin_stat_m_header_text p {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 4px 0 0;
+  font-weight: 600;
+}
+
+.admin_stat_m_category_nav_main {
+  display: flex;
+  background: #e2e8f0;
+  padding: 6px;
+  border-radius: 16px;
+  gap: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.admin_stat_m_nav_tab {
+  border: none;
+  background: transparent;
+  padding: 10px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.admin_stat_m_nav_tab.active {
+  background: white;
+  color: #007acc;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.15);
+}
+
+.admin_stat_m_export_btn {
+  border: 1px solid #e2e8f0;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* 3. STATS BENTO TILES */
+.admin_stat_m_stats_bento {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin_stat_m_stat_card {
+  background: white;
+  padding: 20px 10px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.admin_stat_m_stat_card.primary {
+  background: linear-gradient(135deg, #007acc, #00d2ff);
+  color: white;
+  border: none;
+}
+
+.admin_stat_m_label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.admin_stat_m_value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 5px 0;
+  white-space: nowrap;
+}
+
+.admin_stat_m_pulse_ring {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: admin_stat_m_pulse 2s infinite;
+}
+
+/* 4. BENTO GRID SYSTEM */
+.admin_stat_m_bento_row_sync {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.admin_stat_m_bento_row_equal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.admin_stat_m_bento_item {
+  background: white;
+  border-radius: 32px;
+  padding: 25px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_stat_m_bento_item.span_2 {
+  grid-column: span 1;
+}
+.admin_stat_m_bento_item.span_3 {
+  grid-column: span 1;
+}
+
+/* 5. CHART HEADERS & CONTAINERS */
+.admin_stat_m_card_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.admin_stat_m_card_head h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.admin_stat_m_canvas_holder_reduced {
+  flex: 1;
+  min-height: 250px;
+  position: relative;
+  width: 100%;
+}
+
+.admin_stat_m_canvas_holder_compact {
+  flex: 1;
+  min-height: 240px;
+  position: relative;
+}
+
+.admin_stat_m_chart_focus_mini {
+  height: 180px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 6. FILTERS & TAB SYSTEMS */
+.admin_stat_m_calendar_input_v2 {
+  border: 1px solid #e2e8f0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #007acc;
+  outline: none;
+  background: #fff;
+  max-width: fit-content;
+}
+
+#stat_filter {
+  min-width: fit-content;
+}
+
+.admin_stat_m_mini_tabs {
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  display: flex;
+  gap: 4px;
+}
+.admin_stat_m_mini_tabs button {
+  border: none;
+  background: transparent;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.admin_stat_m_mini_tabs button.active {
+  background: white;
+  color: #007acc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 7. RATINGS & REVIEWS MODULE */
+.admin_stat_m_ratings_distribution {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.admin_stat_m_dist_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.admin_stat_m_dist_label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  width: 35px;
+}
+.admin_stat_m_dist_bar_bg {
+  flex: 1;
+  height: 10px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.admin_stat_m_dist_bar_fill {
+  height: 100%;
+  background: #f59e0b;
+  border-radius: 10px;
+}
+.admin_stat_m_dist_count {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+  width: 45px;
+  text-align: right;
+}
+
+.admin_stat_m_view_more_full {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 14px;
+  font-weight: 700;
+  color: #64748b;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* 8. DOCTOR PROFILE & METRICS */
+.admin_stat_m_best_doctor_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+.admin_stat_m_doc_identity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.admin_stat_m_doc_identity img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid #f0f9ff;
+  object-fit: cover;
+}
+.admin_stat_m_doc_name_group {
+  text-align: center;
+}
+.admin_stat_m_doc_name_group h4 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #1e293b;
+}
+.admin_stat_m_doc_name_group span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.admin_stat_m_doc_info_row {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  margin: 20px 0;
+}
+.admin_stat_m_info_box {
+  flex: 1;
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid #f1f5f9;
+}
+.admin_stat_m_info_box span {
+  display: block;
+  font-size: 0.6rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.admin_stat_m_info_box strong {
+  font-size: 0.95rem;
+  color: #007acc;
+}
+
+/* 9. LEGENDS & SUMMARIES */
+.admin_stat_m_custom_legend_grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.admin_stat_m_legend_pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin_stat_m_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.admin_stat_m_pill_text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.admin_stat_m_pill_text strong {
+  color: #1e293b;
+  margin-left: 4px;
+}
+
+.admin_stat_m_vol_summary_compact {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin_stat_m_vol_label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 700;
+}
+.admin_stat_m_vol_value_mini {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* 10. RESPONSIVE DESIGN */
+@media (max-width: 1400px) {
+  .admin_stat_m_stats_bento {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .admin_stat_m_bento_row_sync {
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .admin_stat_m_value {
+    font-size: 1.4rem;
+  }
+  .admin_stat_m_label {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .admin_stat_m_revenue_header {
+    justify-content: center;
+    text-align: center;
+  }
+  .admin_stat_m_stats_bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .admin_stat_m_bento_row_sync,
+  .admin_stat_m_bento_row_equal {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin_stat_m_revenue_wrapper {
+    padding: 20px;
+    zoom: 1;
+    width: 100%;
+  }
+  .admin_stat_m_stats_bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ==========================================================================
+   RESPONSIVE ENGINE: REVENUE HUB
+   ========================================================================== */
+
+/* 1. Tablet Scaling (Laptop/Large Tablet) */
+@media screen and (max-width: 1400px) {
+  .adm_rev_m_wrapper {
+    zoom: 0.85;
+  }
+  .adm_rev_m_stats_bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 2. Tablet Layout (iPad/Pro) */
+@media screen and (max-width: 1100px) {
+  .adm_rev_m_wrapper {
+    zoom: 0.9;
+    padding: 20px;
+  }
+  .adm_rev_m_bento_row,
+  .adm_rev_m_bento_row_sync,
+  .adm_rev_m_bento_row_equal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .adm_rev_m_bento_item.span_2,
+  .adm_rev_m_bento_item.span_3 {
+    grid-column: span 1;
+  }
+}
+
+/* 3. Small Tablet / Large Mobile */
+@media screen and (max-width: 900px) {
+  .adm_rev_m_stats_bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .adm_rev_m_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .adm_rev_m_header_actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .adm_rev_m_global_search {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* 4. Mobile Responsiveness */
+@media screen and (max-width: 600px) {
+  .adm_rev_m_wrapper {
+    zoom: 1;
+    padding: 15px;
+  }
+
+  .adm_rev_m_stats_bento {
+    grid-template-columns: 1fr;
+  }
+
+  .adm_rev_m_toolbar_row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .adm_rev_m_tab_group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .adm_rev_m_tab {
+    justify-content: center;
+  }
+
+  .adm_rev_m_sort_wrapper {
+    justify-content: space-between;
+  }
+
+  .adm_rev_m_modal_card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .adm_rev_m_form_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .adm_rev_m_form_actions {
+    grid-column: span 1;
+  }
+
+  .adm_rev_m_profile_hero_card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .adm_rev_m_hero_left {
+    flex-direction: column;
+  }
+
+  .adm_rev_m_hero_stats {
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .adm_rev_m_split_history_row {
+    grid-template-columns: 1fr;
+  }
+}

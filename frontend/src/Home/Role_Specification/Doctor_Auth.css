@@ -1,0 +1,22 @@
+/* doctor Portal Theme */
+.doctor-auth-theme {
+    --primary: #007acc;
+    --primary-glow: rgba(0, 122, 204, 0.3);
+    --grad-linear: linear-gradient(135deg, #007acc 0%, #00d2ff 100%);
+    --text-main: #1e293b;
+
+    background: linear-gradient(135deg, #f8fafc, #e0f7fa);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout Containers */
+.doctor-auth-theme .auth-main-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    box-sizing: border-box;
+}

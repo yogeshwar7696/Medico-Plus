@@ -1,0 +1,710 @@
+/* ==========================================================================
+   MEDICO+ ELITE GOVERNANCE: EVENT MANAGEMENT STYLING (RESPONSIVE MASTER)
+   ========================================================================== */
+
+:root {
+  --elite-primary: #007acc;
+  --elite-cyan: #00d2ff;
+  --elite-bg: #f8fafc;
+  --elite-glass: rgba(255, 255, 255, 0.85);
+  --elite-border: rgba(226, 232, 240, 0.8);
+  --elite-shadow: 0 10px 30px rgba(0, 122, 204, 0.05);
+}
+
+.event_elite_root {
+  padding: 25px;
+  background: var(--elite-bg);
+  min-height: 100vh;
+  animation: medicoPageFade 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  zoom: 0.7;
+}
+
+@keyframes medicoPageFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Elite Branding & Header --- */
+.dept_elite_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dept_elite_branding h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -1.2px;
+  margin: 0;
+}
+
+.text_cyan {
+  background: linear-gradient(135deg, var(--elite-primary), var(--elite-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Action Buttons (Medico Elite Standard) --- */
+.dept_elite_btn_primary {
+  background: var(--elite-primary);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 122, 204, 0.15);
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.dept_elite_btn_primary:hover {
+  background: #0062a3;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 122, 204, 0.25);
+}
+
+/* --- Bento Statistics Grid --- */
+.dept_elite_stats_bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.dept_elite_stat_tile {
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--elite-border);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--elite-shadow);
+  transition: transform 0.3s ease;
+}
+
+.stat_tile_icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stat_tile_label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat_tile_value {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* --- Control Bar (Glassmorphism Core) --- */
+.dept_mgmt_control_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--elite-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px 25px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.03);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.dept_mgmt_search_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 10px 18px;
+  border-radius: 12px;
+  width: 450px;
+  max-width: 100%;
+}
+
+.dept_mgmt_search_wrapper input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  color: #334155;
+}
+
+/* --- Clinical Registry Table --- */
+.admin_event_m_table_scroll {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid var(--elite-border);
+  overflow-x: auto;
+  box-shadow: var(--elite-shadow);
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin_event_m_table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 900px;
+}
+
+.admin_event_m_table th {
+  background: #fcfdfe;
+  padding: 20px 25px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.admin_event_m_table td {
+  padding: 16px 25px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.admin_event_m_avatar_init {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.badge_pill {
+  background: #f1f5f9;
+  color: #475569;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 11px;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+/* --- Status Pills (Medico+ Palette) --- */
+.admin_event_m_status {
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.admin_event_m_status.upcoming {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+.admin_event_m_status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+.admin_event_m_status.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* --- Action Buttons --- */
+.admin_dept_action_group {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.admin_dept_icon_btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #f1f5f9;
+  background: white;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.admin_dept_icon_btn:hover {
+  background: #f8fafc;
+  color: var(--elite-primary);
+  border-color: var(--elite-primary);
+}
+
+/* --- Elite Modal System --- */
+.admin_event_m_modal {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 105vh !important;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.admin_event_m_modal_box {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  animation: modalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  position: relative;
+  padding: 20px 30px;
+}
+
+.admin_event_m_modal_box.viewing_modal {
+  max-width: 650px;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.admin_event_m_modal_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.admin_event_m_modal_head h2,
+.admin_event_m_modal_head h3 {
+  margin: 0;
+  color: #1e293b;
+}
+
+.admin_event_m_modal_head button {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.admin_event_m_modal_head button:hover {
+  background: #f1f5f9;
+}
+
+.modal_header_accent {
+  height: 6px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.dept_detail_body {
+  padding: 35px;
+}
+
+.dept_detail_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.detail_node label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.detail_node strong {
+  font-size: 18px;
+  color: #1e293b;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.admin_event_m_form {
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin_event_m_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin_event_m_field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.admin_event_m_field input[type="text"],
+.admin_event_m_field input[type="date"],
+.admin_event_m_field input[type="number"],
+.admin_event_m_select {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin_event_m_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.admin_event_m_submit {
+  background: var(--elite-primary);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.admin_event_m_submit:hover {
+  background: #0062a3;
+}
+
+.admin_dash_load {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #007acc;
+  font-weight: 800;
+  gap: 15px;
+}
+
+/* ==========================================================================
+   BREAKPOINTS & RESPONSIVE LAYOUT REFLECTIONS
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .dept_elite_stats_bento {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .dept_mgmt_search_wrapper {
+    width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event_elite_root {
+    padding: 16px;
+  }
+
+  .dept_elite_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  .dept_elite_btn_primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dept_mgmt_control_bar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .dept_mgmt_search_wrapper {
+    width: 100%;
+  }
+
+  .dept_detail_grid,
+  .admin_event_m_row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .admin_event_m_modal_box {
+    border-radius: 20px;
+  }
+
+  .modal_header_accent {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .admin_event_m_modal_head {
+    padding: 25px 20px 0 20px;
+  }
+
+  .admin_event_m_form {
+    padding: 20px;
+  }
+
+  .dept_detail_body {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dept_elite_stats_bento {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .dept_elite_branding h1 {
+    font-size: 26px;
+  }
+
+  .dept_elite_stat_tile {
+    padding: 16px;
+  }
+
+  .stat_tile_value {
+    font-size: 24px;
+  }
+
+  .detail_node strong {
+    font-size: 16px;
+  }
+}
+/* --- Elite Modal Framework Wrapper --- */
+.adm_evt_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100% !important;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: first baseline;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.adm_evt_modal_box {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  animation: admEvtModalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+  position: relative;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.adm_evt_modal_wide {
+  max-width: 700px;
+}
+
+@keyframes admEvtModalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.adm_evt_modal_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 15px;
+}
+
+.adm_evt_modal_head h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.adm_evt_modal_head h3 span {
+  color: #007acc;
+}
+
+.adm_evt_modal_head button {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.adm_evt_modal_head button:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+/* --- Form Layout & Input Typography Panel --- */
+.adm_evt_form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.adm_evt_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.adm_evt_field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.adm_evt_field input[type="text"],
+.adm_evt_field input[type="date"],
+.adm_evt_field input[type="number"],
+.adm_evt_select {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.adm_evt_field input:focus,
+.adm_evt_select:focus {
+  border-color: #007acc;
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
+}
+
+.adm_evt_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* --- Action Submit Button --- */
+.adm_evt_submit {
+  background: #007acc;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+  transition:
+    background 0.2s,
+    transform 0.1s,
+    box-shadow 0.2s;
+}
+
+.adm_evt_submit:hover {
+  background: #0062a3;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 122, 204, 0.3);
+}
+
+.adm_evt_submit:active {
+  transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .adm_evt_modal_box {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .adm_evt_row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}

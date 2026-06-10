@@ -1,0 +1,78 @@
+/* ==========================================================================
+   MEDICO+ CLIENT PLATFORM: PATIENT HOME MASTER INTERFACE LAYOUT
+   ========================================================================== */
+
+:root {
+  --pat-bg-primary: #f8fafc;
+  --pat-surface: #ffffff;
+  --pat-text-main: #1e293b;
+  --pat-border-token: #e2e8f0;
+  --pat-max-width: 1600px;
+  --pat-transition: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pat_home_layout {
+  min-height: 100vh;
+  background-color: var(--pat-bg-primary);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   DYNAMIC APP VIEWPORT CONFIGURATION
+   ========================================================================== */
+.pat_home_content_area {
+  flex: 1;
+  width: 100%;
+  max-width: var(--pat-max-width);
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+  box-sizing: border-box;
+  zoom: 0.85;
+}
+
+/* Unified App Page Transitions */
+.pat_home_content_area > div {
+  animation: patPageLoadTransition 0.45s var(--pat-transition);
+}
+
+@keyframes patPageLoadTransition {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   CROSS-DEVICE LIQUID RESPONSIVE GRID MATRIX
+   ========================================================================== */
+@media screen and (max-width: 1400px) {
+  .pat_home_content_area {
+    padding: 0 30px 30px 30px;
+    zoom: 0.9;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pat_home_content_area {
+    padding: 0 24px 24px 24px;
+    zoom: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pat_home_content_area {
+    padding: 0 16px 24px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .pat_home_content_area {
+    padding: 0 12px 16px 12px;
+  }
+}

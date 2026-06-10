@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.pat_onboard_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 41, 59, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 24px;
+  zoom: 0.8;
+}
+
+.pat_onboard_card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 760px;
+  padding: 28px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+  border: 1px solid #e2e8f0;
+  box-sizing: border-box;
+}
+
+.pat_onboard_header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pat_onboard_header h2 {
+  color: #1e293b;
+  font-size: 1.45rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+}
+
+.pat_onboard_header p {
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.pat_onboard_image_section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.pat_onboard_avatar_preview {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+}
+
+.pat_onboard_avatar_preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pat_onboard_placeholder {
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pat_onboard_file_btn {
+  background: #ffffff;
+  color: #1e293b;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.pat_onboard_file_btn:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.pat_onboard_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.pat_onboard_group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.full_width {
+  grid-column: span 3;
+  margin-bottom: 14px;
+}
+
+.pat_onboard_group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.pat_onboard_group input,
+.pat_onboard_group select,
+.pat_onboard_group textarea {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  color: #1e293b;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.pat_onboard_group input:focus,
+.pat_onboard_group select:focus,
+.pat_onboard_group textarea:focus {
+  border-color: #007acc;
+}
+
+.pat_onboard_group textarea {
+  height: 64px;
+  resize: none;
+}
+
+.pat_onboard_actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pat_onboard_submit_btn {
+  background: #007acc;
+  color: #ffffff;
+  padding: 11px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s ease;
+}
+
+.pat_onboard_submit_btn:hover {
+  background: #0062a3;
+}
+
+.pat_onboard_skip_btn {
+  background: #ffffff;
+  color: #64748b;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  flex: 1;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.pat_onboard_skip_btn:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+@media (max-width: 768px) {
+  .pat_onboard_card {
+    max-width: 520px;
+    padding: 24px;
+  }
+  .pat_onboard_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .full_width {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .pat_onboard_card {
+    padding: 20px;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  .pat_onboard_grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .full_width {
+    grid-column: span 1;
+  }
+  .pat_onboard_actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}

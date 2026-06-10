@@ -1,0 +1,835 @@
+/* 1. GLOBAL FOUNDATIONS */
+:root {
+  --sa-primary: #007acc;
+  --sa-primary-light: #f0f7ff;
+  --sa-secondary: #00d2ff;
+  --sa-success: #10b981;
+  --sa-warning: #f59e0b;
+  --sa-danger: #ef4444;
+  --sa-text: #1e293b;
+  --sa-text-muted: #64748b;
+  --sa-border: #f1f5f9;
+  --sa-bg: #f8fafc;
+  --sa-white: #ffffff;
+  --sa-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.doc_perf_dash_wrapper {
+  padding: 30px;
+  background-color: var(--sa-bg);
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: var(--sa-text);
+  zoom: 0.7;
+  box-sizing: border-box;
+}
+
+@keyframes doc_perf_dash_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doc_perf_dash_fade_in {
+  animation: doc_perf_dash_fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* 2. HEADER SECTION */
+.doc_perf_dash_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.doc_perf_dash_header_text h1 {
+  font-size: 1.85rem;
+  margin: 0;
+  font-weight: 800;
+  color: var(--sa-text);
+}
+
+.doc_perf_dash_header_text h1 span {
+  color: var(--sa-primary);
+}
+
+.doc_perf_dash_header_text p {
+  font-size: 0.9rem;
+  color: var(--sa-text-muted);
+  margin-top: 5px;
+  font-weight: 600;
+}
+
+.doc_perf_dash_btn_primary {
+  background: var(--sa-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+}
+
+/* 3. KPI STATS ROW */
+.doc_perf_dash_stats_row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.doc_perf_dash_stat_card {
+  background: var(--sa-white);
+  flex: 1;
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid var(--sa-border);
+  box-shadow: var(--sa-shadow);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.doc_perf_dash_stat_card:hover {
+  transform: translateY(-5px);
+  border-color: var(--sa-primary-light);
+}
+
+.doc_perf_dash_stat_card.doc_perf_dash_primary {
+  background: linear-gradient(135deg, #007acc 0%, #00d2ff 100%);
+  color: white;
+  border: none;
+}
+
+.doc_perf_dash_label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.doc_perf_dash_value_small {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* 4. DUAL ROW ENGINE (BENTO LAYOUT) */
+.doc_perf_dash_dual_row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 25px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.flex_2 {
+  width: 65% !important;
+  flex-shrink: 0;
+}
+
+.flex_1 {
+  width: calc(35% - 25px) !important;
+  flex-shrink: 0;
+}
+
+.doc_perf_dash_flex_half {
+  width: calc(50% - 12.5px) !important;
+  flex: 0 0 auto !important;
+}
+.doc_perf_dash_margin_top {
+  margin-top: 20px;
+}
+.doc_perf_dash_bento_item {
+  background: var(--sa-white);
+  border-radius: 30px;
+  padding: 25px;
+  border: 1px solid var(--sa-border);
+  box-shadow: var(--sa-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.doc_perf_dash_card_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.doc_perf_dash_card_head h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--sa-text);
+  margin: 0;
+}
+
+/* 5. CHARTS & DONUT ELEMENTS */
+.doc_perf_dash_canvas_holder {
+  height: 320px;
+  width: 100%;
+  position: relative;
+  margin-top: 10px;
+}
+
+.doc_perf_dash_canvas_holder canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.doc_perf_dash_chart_focus_mini {
+  height: 220px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.doc_perf_dash_donut_center {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.doc_perf_dash_donut_center strong {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+}
+
+.doc_perf_dash_donut_center span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--sa-text-muted);
+  font-weight: 700;
+}
+
+/* 6. COMPOSITION & LEGENDS */
+.doc_perf_dash_comp_legend {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doc_perf_dash_comp_pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.doc_perf_dash_comp_pill:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
+}
+
+.doc_perf_dash_comp_info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc_perf_dash_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot_returning {
+  background-color: #007acc;
+  box-shadow: 0 0 8px rgba(0, 122, 204, 0.4);
+}
+.dot_first {
+  background-color: #00d2ff;
+  box-shadow: 0 0 8px rgba(0, 210, 255, 0.4);
+}
+
+.doc_perf_dash_custom_legend_v2 {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc_perf_dash_legend_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s ease;
+}
+
+.doc_perf_dash_legend_left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc_perf_dash_legend_dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 7. RANK AUTHORITY HUB */
+.doc_perf_dash_rank_ribbon {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 24px;
+  border: 1px solid #f1f5f9;
+}
+
+.doc_perf_dash_rank_focus_box {
+  background: var(--sa-primary);
+  color: white;
+  padding: 25px 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 122, 204, 0.2);
+}
+
+.doc_perf_dash_rank_num_hero {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.doc_perf_dash_rank_stats_grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.doc_perf_dash_rank_stat_node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+}
+
+/* 8. DYNAMICS & TABS */
+.doc_perf_dash_header_actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.doc_perf_dash_mini_tabs {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  border: 1px solid var(--sa-border);
+  gap: 2px;
+}
+
+.doc_perf_dash_mini_tabs button {
+  border: none;
+  background: transparent;
+  padding: 8px 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--sa-text-muted);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.doc_perf_dash_mini_tabs button.doc_perf_dash_active {
+  background: #ffffff;
+  color: var(--sa-primary);
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.1);
+}
+
+.doc_perf_dash_select_filter_mini {
+  background: var(--sa-white);
+  border: 1px solid var(--sa-border);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--sa-primary);
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+/* 9. RESPONSIVE QUERIES */
+@media (max-width: 1100px) {
+  .doc_perf_dash_dual_row {
+    flex-direction: column !important;
+  }
+  .flex_2,
+  .flex_1,
+  .doc_perf_dash_flex_half {
+    width: 100% !important;
+  }
+  .doc_perf_dash_header_actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .doc_perf_dash_wrapper {
+    zoom: 1;
+    padding: 15px;
+  }
+  .doc_perf_dash_stats_row {
+    flex-direction: column !important;
+  }
+}
+/* --- RESPONSIVE LAYOUT UPGRADE --- */
+
+/* 1. Tablet & Large Screen Adjustments */
+@media (max-width: 1100px) {
+  .doc_perf_dash_dual_row {
+    flex-direction: column !important;
+  }
+
+  .flex_2,
+  .flex_1,
+  .doc_perf_dash_flex_half {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* 2. Mobile & Small Tablet Optimization */
+@media (max-width: 900px) {
+  .doc_perf_dash_stats_row {
+    display: grid !important;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* Stats become 2x2 grid */
+    gap: 15px !important;
+  }
+
+  .doc_perf_dash_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .doc_perf_dash_rank_ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .doc_perf_dash_rank_stats_grid {
+    grid-template-columns: 1fr; /* Rank stats stack vertically */
+  }
+}
+
+/* 3. Deep Mobile Scaling */
+@media (max-width: 600px) {
+  .doc_perf_dash_wrapper {
+    zoom: 1; /* Reset zoom to prevent tiny UI */
+    padding: 15px;
+  }
+
+  .doc_perf_dash_stats_row {
+    grid-template-columns: 1fr; /* Single column stats */
+  }
+
+  .doc_perf_dash_card_head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .doc_perf_dash_header_actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doc_perf_dash_mini_tabs {
+    width: 100%;
+    display: flex;
+  }
+
+  .doc_perf_dash_mini_tabs button {
+    flex: 1;
+  }
+
+  .doc_perf_dash_select_filter_mini {
+    width: 100%;
+  }
+
+  .doc_perf_dash_canvas_holder {
+    height: 250px; /* Shrink chart height for mobile */
+  }
+}
+@media (max-width: 1200px) {
+  .doc_perf_dash_stats_row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .doc_perf_dash_dual_row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  .flex_2,
+  .flex_1,
+  .doc_perf_dash_flex_half {
+    width: 100% !important;
+  }
+
+  .doc_perf_dash_rank_ribbon {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .doc_perf_dash_rank_focus_box {
+    padding: 20px !important;
+  }
+
+  .doc_perf_dash_stats_row {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 678px) {
+  .doc_perf_dash_wrapper {
+    zoom: 1 !important;
+    padding: 16px !important;
+  }
+
+  .doc_perf_dash_header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .doc_perf_dash_btn_primary {
+    width: 95% !important;
+    justify-content: center !important;
+  }
+
+  .doc_perf_dash_stats_row {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .doc_perf_dash_card_head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .doc_perf_dash_header_actions {
+    width: 95% !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .doc_perf_dash_mini_tabs {
+    width: 95% !important;
+  }
+
+  .doc_perf_dash_mini_tabs button {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+
+  .doc_perf_dash_select_filter_mini {
+    width: 95% !important;
+  }
+
+  .doc_perf_dash_rank_stats_grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .doc_perf_dash_canvas_holder {
+    height: 240px !important;
+  }
+
+  .doc_perf_dash_canvas_wrapper_donut {
+    width: 95% !important;
+    height: 180px !important;
+  }
+}
+/* --- SIZING SYMMETRY REVISIONS FOR THE DUAL ROW CARDS --- */
+.doc_perf_dash_canvas_holder {
+  height: 320px !important;
+  width: 100%;
+  position: relative;
+}
+
+/* Forces the Donut parent containers to match the Bar chart's bounding height */
+.doc_perf_dash_chart_focus_mini {
+  height: 240px !important; /* Raised height profile to maximize charts presence */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* Explicitly scales the Chart.js inner responsive canvas elements */
+.doc_perf_dash_canvas_wrapper_donut {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 220px;
+  position: relative;
+}
+
+/* --- REVISED LEGENDS FLEX ENGINE (COMPACT AND MULTI-COLUMN ADJUSTED) --- */
+.doc_perf_dash_comp_legend,
+.doc_perf_dash_custom_legend_v2 {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(130px, 1fr)
+  ); /* Wraps cleanly inline instead of stacking endlessly down */
+  gap: 10px;
+  width: 100%;
+}
+
+.doc_perf_dash_comp_pill,
+.doc_perf_dash_legend_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  box-sizing: border-box;
+}
+
+.doc_perf_dash_comp_info,
+.doc_perf_dash_legend_left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.doc_perf_dash_comp_name,
+.doc_patn_m_legend_label {
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  color: var(--sa-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc_perf_dash_comp_perc,
+.doc_perf_dash_legend_value {
+  font-size: 0.82rem !important;
+  font-weight: 800;
+  color: var(--sa-text);
+}
+
+/* --- DEEP SMARTPHONE BREAKPOINT FIXES --- */
+@media (max-width: 678px) {
+  .doc_perf_dash_chart_focus_mini {
+    height: 200px !important;
+  }
+
+  .doc_perf_dash_comp_legend,
+  .doc_perf_dash_custom_legend_v2 {
+    grid-template-columns: 1fr; /* Drop cleanly back into an individual line item list map on small phones */
+    gap: 8px;
+  }
+}
+/* =========================================================================
+   MEDICO RESPONSIVE GRID RESET (OVERRIDES HARDCODED DESKTOP FLUID SPECS)
+   ========================================================================= */
+
+/* --- TABLET & MEDIUM VIEWPORTS BREAKPOINT TIER --- */
+@media (max-width: 1100px) {
+  /* Forces metrics cards out of inline flex and drops into grid spaces */
+  .doc_perf_dash_stats_row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  /* Unlocks structural rigid spacing blocks */
+  .doc_perf_dash_dual_row {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+
+  /* Completely resets desktop priority percentage widths back to 100% fluid */
+  .flex_2,
+  .flex_1,
+  .doc_perf_dash_flex_half {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    box-sizing: border-box;
+  }
+
+  .doc_perf_dash_header_actions {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .doc_perf_dash_rank_ribbon {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 20px !important;
+  }
+
+  .doc_perf_dash_rank_focus_box {
+    padding: 20px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* --- SMALL MOBILES & PHABLETS INTERFACE TIER --- */
+@media (max-width: 768px) {
+  .doc_perf_dash_wrapper {
+    padding: 20px !important;
+  }
+
+  .doc_perf_dash_header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .doc_perf_dash_btn_primary {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .doc_perf_dash_stats_row {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* Converts stats grid block to clean 2x2 symmetry */
+    gap: 14px !important;
+  }
+
+  .doc_perf_dash_card_head {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+
+  .doc_perf_dash_header_actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+  }
+
+  .doc_perf_dash_mini_tabs {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .doc_perf_dash_mini_tabs button {
+    flex: 1 !important;
+    text-align: center !important;
+  }
+
+  .doc_perf_dash_select_filter_mini {
+    width: 100% !important;
+  }
+
+  .doc_perf_dash_rank_stats_grid {
+    grid-template-columns: 1fr !important; /* Drops rank metrics nodes file to 1 vertical row */
+    gap: 10px !important;
+  }
+
+  .doc_perf_dash_comp_legend,
+  .doc_perf_dash_custom_legend_v2 {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ) !important; /* Aligns legend pills grid beautifully inline */
+  }
+}
+
+/* --- DEEP MOBILE PORTRAIT CONSTRAINTS --- */
+@media (max-width: 520px) {
+  .doc_perf_dash_wrapper {
+    zoom: 0.85 !important; 
+    padding: 16px !important;
+  }
+
+  .doc_perf_dash_stats_row {
+    grid-template-columns: 1fr !important; 
+    gap: 12px !important;
+  }
+
+  .doc_perf_dash_chart_focus_mini {
+    height: 200px !important; /
+  }
+
+  .doc_perf_dash_canvas_holder {
+    height: 240px !important;
+  }
+
+  .doc_perf_dash_comp_legend,
+  .doc_perf_dash_custom_legend_v2 {
+    grid-template-columns: 1fr !important; /* Converts multi-column legends grid down to a list */
+    gap: 8px !important;
+  }
+
+  .doc_perf_dash_comp_pill,
+  .doc_perf_dash_legend_row {
+    padding: 12px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+}

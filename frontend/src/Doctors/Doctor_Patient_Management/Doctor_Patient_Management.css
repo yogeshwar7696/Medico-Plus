@@ -1,0 +1,1161 @@
+:root {
+  --doc_pat_m_primary: #007acc;
+  --doc_pat_m_primary_light: #e0f2fe;
+  --doc_pat_m_success: #10b981;
+  --doc_pat_m_warning: #ffcd56;
+  --doc_pat_m_danger: #e11d48;
+  --doc_pat_m_text: #1e293b;
+  --doc_pat_m_text_muted: #64748b;
+  --doc_pat_m_border: #e2e8f0;
+  --doc_pat_m_bg: #f8fbff;
+  --doc_pat_m_white: #ffffff;
+  --doc_pat_m_gradient: linear-gradient(135deg, #007acc 0%, #00d2ff 100%);
+  --doc_pat_m_radius: 12px;
+}
+
+.doc_pat_m_root {
+  padding: 24px;
+  background: var(--doc_pat_m_bg);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  zoom: 0.85;
+}
+
+.doc_pat_m_loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--doc_pat_m_primary);
+  min-height: 400px;
+}
+
+.doc_pat_m_spin {
+  animation: doc_pat_m_spinning 1s linear infinite;
+}
+
+@keyframes doc_pat_m_spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- SECTION: PATIENT REGISTRY LIST CONTROLS --- */
+.doc_pat_m_section_header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.doc_pat_m_title_elite {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.doc_pat_m_highlight {
+  color: var(--doc_pat_m_primary);
+  font-weight: 400;
+}
+
+.doc_pat_m_subtitle {
+  color: var(--doc_pat_m_text_muted);
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
+}
+
+.doc_pat_m_filter_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--doc_pat_m_white);
+  padding: 14px 20px;
+  border-radius: var(--doc_pat_m_radius);
+  border: 1px solid var(--doc_pat_m_border);
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
+.doc_pat_m_search_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 8px;
+  flex: 1;
+  max-width: 320px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_search_box:focus-within {
+  background: var(--doc_pat_m_white);
+  border-color: var(--doc_pat_m_primary);
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.05);
+}
+
+.doc_pat_m_search_box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.85rem;
+  width: 100%;
+  color: var(--doc_pat_m_text);
+}
+
+.doc_pat_m_filter_controls_stack {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc_pat_m_date_filter_wrap,
+.doc_pat_m_dropdown_filter_wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f8fafc;
+  border: 1px solid var(--doc_pat_m_border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: var(--doc_pat_m_text_muted);
+}
+
+.doc_pat_m_date_filter_wrap input,
+.doc_pat_m_dropdown_filter_wrap select {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text);
+  font-weight: 500;
+}
+
+.doc_pat_m_clear_filter_btn {
+  background: #fff1f2;
+  color: var(--doc_pat_m_danger);
+  border: 1px solid #ffe4e6;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_clear_filter_btn:hover {
+  background: var(--doc_pat_m_danger);
+  color: #ffffff;
+}
+
+/* --- SECTION: MASTER REGISTRY DATA TABLE --- */
+.doc_pat_m_table_container {
+  background: var(--doc_pat_m_white);
+  border-radius: var(--doc_pat_m_radius);
+  border: 1px solid var(--doc_pat_m_border);
+  overflow-x: auto;
+}
+
+.doc_pat_m_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc_pat_m_table th {
+  background: #f8fafc;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--doc_pat_m_text_muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--doc_pat_m_border);
+  font-weight: 700;
+}
+
+.doc_pat_m_table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.doc_pat_m_cell_user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc_pat_m_avatar_placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--doc_pat_m_primary_light);
+  color: var(--doc_pat_m_primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc_pat_m_user_meta b {
+  display: block;
+  color: #0f172a;
+  font-size: 0.85rem;
+}
+
+.doc_pat_m_user_meta span {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.doc_pat_m_disease_tag {
+  background: var(--doc_pat_m_bg);
+  color: var(--doc_pat_m_text);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid var(--doc_pat_m_border);
+}
+
+.doc_pat_m_btn_manage {
+  background: #ffffff;
+  color: var(--doc_pat_m_primary);
+  border: 1px solid var(--doc_pat_m_border);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_btn_manage:hover {
+  background: var(--doc_pat_m_primary_light);
+  border-color: var(--doc_pat_m_primary);
+}
+
+.doc_pat_m_pagination_bar {
+  padding: 14px 20px;
+  background: var(--doc_pat_m_white);
+  border-top: 1px solid var(--doc_pat_m_border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.doc_pat_m_pag_buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc_pat_m_pag_nav_btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--doc_pat_m_border);
+  background: var(--doc_pat_m_white);
+  border-radius: 6px;
+  color: var(--doc_pat_m_text_muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_pag_nav_btn:hover:not(:disabled) {
+  background: var(--doc_pat_m_bg);
+  color: var(--doc_pat_m_primary);
+}
+
+.doc_pat_m_pag_indicator {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--doc_pat_m_text);
+}
+
+/* --- SECTION: ROW 1 UPPER WORKSPACE ARCHITECTURE --- */
+.doc_pat_m_detail_nav {
+  margin-bottom: 20px;
+}
+
+.doc_pat_m_back_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--doc_pat_m_white);
+  border: 1px solid var(--doc_pat_m_border);
+  color: var(--doc_pat_m_text);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_back_btn:hover {
+  background: var(--doc_pat_m_bg);
+}
+
+.doc_pat_m_workspace_upper_row {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 24px;
+}
+
+/* DEMOGRAPHICS 2-COLUMN SPLIT PANEL VIEW */
+.doc_pat_m_split_info_container {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.doc_pat_m_demographics_left_panel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.doc_pat_m_patient_headline_group h2 {
+  margin: 0 0 6px 0;
+  font-size: 1.4rem;
+  color: var(--doc_pat_m_text);
+  font-weight: 800;
+}
+
+.doc_pat_m_id_pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0d9488;
+  background: #f0fdf4;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.doc_pat_m_vitals_horizontal_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.doc_pat_m_strip_metric_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--doc_pat_m_bg);
+  border: 1px solid var(--doc_pat_m_border);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text_muted);
+}
+
+.doc_pat_m_strip_metric_box strong {
+  color: var(--doc_pat_m_text);
+  display: block;
+  margin-top: 2px;
+}
+
+.doc_pat_m_contact_info_box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.doc_pat_m_contact_line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--doc_pat_m_text);
+  font-size: 0.8rem;
+}
+
+.doc_pat_m_backup_emergency_line {
+  width: fit-content;
+  margin-top: 4px;
+  padding: 10px 14px;
+  background: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 8px;
+}
+
+.doc_pat_m_emergency_alert_tag {
+  color: var(--doc_pat_m_danger);
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+/* Patient Image full-height coverage panel grid */
+.doc_pat_m_photo_right_panel {
+  width: 70%;
+  height: 70%;
+  position: relative;
+  top: 15%;
+  left: 20%;
+}
+
+.doc_pat_m_full_height_dossier_image {
+  width: 55%;
+  height: 80%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10%;
+}
+
+/* --- SECTION: ROW 2 LOWER WORKSPACE TIMELINES --- */
+.doc_pat_m_workspace_lower_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.doc_pat_m_card_refined {
+  background: var(--doc_pat_m_white);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid var(--doc_pat_m_border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.doc_pat_m_history_title {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.doc_pat_m_medico_teal_header {
+  color: #0d9488;
+}
+.doc_pat_m_medico_blue_header {
+  color: #2563eb;
+}
+
+.doc_pat_m_vertical_scroll_lock_container {
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.doc_pat_m_vertical_scroll_lock_container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.doc_pat_m_vertical_scroll_lock_container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.doc_pat_m_clickable_case_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--doc_pat_m_bg_mute);
+  border: 1px solid var(--doc_pat_m_border);
+  border-radius: 10px;
+  cursor: pointer;
+  gap: 16px;
+  transition: all 0.2s ease;
+}
+
+.doc_pat_m_clickable_case_row:hover {
+  background: var(--doc_pat_m_white);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.doc_pat_m_own_encounter_node {
+  border-left: 4px solid #0d9488;
+}
+.doc_pat_m_external_encounter_node {
+  border-left: 4px solid #3b82f6;
+}
+
+.doc_pat_m_case_row_left_stack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.doc_pat_m_case_badge_date_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc_pat_m_case_badge_date_info strong {
+  font-size: 0.85rem;
+  color: var(--doc_pat_m_text);
+}
+
+.doc_pat_m_case_consultant_label {
+  font-size: 0.7rem;
+  color: var(--doc_pat_m_text_muted);
+  background: #f1f5f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.doc_pat_m_case_notes_truncate_preview {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text_muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc_pat_m_case_row_right_flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  color: var(--doc_pat_m_text_muted);
+}
+
+.doc_pat_m_case_status_pill {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.doc_pat_m_status_upcoming {
+  background: #fef3c7;
+  color: #d97706;
+}
+.doc_pat_m_status_completed {
+  background: #d1fae5;
+  color: #059669;
+}
+.doc_pat_m_status_cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.doc_pat_m_empty_text {
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text_muted);
+  text-align: center;
+  font-style: italic;
+  margin: 24px 0;
+}
+
+/* --- SECTION: SCREEN INTERACTIVE POPUP SHEET DIALOGUES --- */
+.doc_pat_m_clinical_inspection_modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.doc_pat_m_inspection_modal_card_blueprint {
+  background: var(--doc_pat_m_white);
+  width: 100%;
+  max-width: 620px;
+  height: fit-content;
+  border-radius: 14px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.doc_pat_m_inspection_modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid var(--doc_pat_m_border);
+}
+
+.doc_pat_m_inspection_modal_header h3 {
+  margin: 0 0 2px 0;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.doc_pat_m_modal_ref_id {
+  font-size: 0.75rem;
+  color: var(--doc_pat_m_text_muted);
+}
+
+.doc_pat_m_close_modal_action {
+  background: none;
+  border: none;
+  color: var(--doc_pat_m_text_muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.doc_pat_m_close_modal_action:hover {
+  background: #edf2f7;
+  color: var(--doc_pat_m_text);
+}
+
+.doc_pat_m_inspection_modal_body_content {
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doc_pat_m_modal_meta_grid_layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  background: var(--doc_pat_m_bg_mute);
+  padding: 14px;
+  border-radius: 8px;
+}
+
+.doc_pat_m_modal_meta_cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.doc_pat_m_modal_clinical_findings_box {
+  background: #fdfdfd;
+  border: 1px solid #14b8a6;
+  border-left: 4px solid #0d9488;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.doc_pat_m_modal_clinical_findings_box h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.doc_pat_m_modal_clinical_findings_box p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.doc_pat_m_modal_rx_dispatched_block {
+  border: 1px solid #67e8f9;
+  border-left: 4px solid #06b6d4;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fafeff;
+}
+
+.doc_pat_m_modal_rx_dispatched_block h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.85rem;
+  color: #0f172a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.doc_pat_m_modal_rx_table_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc_pat_m_modal_rx_item_row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--doc_pat_m_border);
+}
+
+.doc_pat_m_modal_rx_item_row:last-child {
+  border-bottom: none;
+}
+
+.doc_pat_m_rx_item_main_identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc_pat_m_rx_item_main_identity strong {
+  font-size: 0.9rem;
+  color: var(--doc_pat_m_text);
+}
+
+.doc_pat_m_rx_item_type_tag {
+  font-size: 0.65rem;
+  background: var(--doc_pat_m_primary_light);
+  color: var(--doc_pat_m_primary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.doc_pat_m_rx_item_clinical_dosage_meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text_muted);
+}
+
+.doc_pat_m_no_rx_logged_warning {
+  font-size: 0.8rem;
+  color: var(--doc_pat_m_text_muted);
+  font-style: italic;
+  margin: 4px 0 0 0;
+}
+
+.doc_pat_m_divider_dot {
+  color: #cbd5e1;
+}
+.doc_pat_m_text_right {
+  text-align: right;
+}
+
+/* --- SECTION: ANIMATION DISPATCH LAYOUTS --- */
+.doc_pat_m_page_fade_in {
+  animation: doc_pat_m_fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes doc_pat_m_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1200px) {
+  .doc_pat_m_workspace_upper_row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .doc_pat_m_split_info_container {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .doc_pat_m_filter_bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .doc_pat_m_search_box {
+    max-width: 100%;
+  }
+
+  .doc_pat_m_filter_controls_stack {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .doc_pat_m_date_filter_wrap,
+  .doc_pat_m_dropdown_filter_wrap {
+    flex: 1;
+    min-width: 150px;
+    justify-content: space-between;
+  }
+
+  .doc_pat_m_clear_filter_btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .doc_pat_m_workspace_lower_row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_pat_m_split_info_container {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_photo_right_panel {
+    height: 220px;
+    order: -1;
+  }
+
+  .doc_pat_m_vitals_horizontal_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doc_pat_m_contact_info_box {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc_pat_m_root {
+    padding: 16px;
+  }
+
+  .doc_pat_m_vitals_horizontal_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_modal_meta_grid_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_inspection_modal_card_blueprint {
+    width: 100%;
+  }
+
+  .doc_pat_m_rx_item_clinical_dosage_meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .doc_pat_m_divider_dot {
+    display: none;
+  }
+}
+@media (min-width: 1201px) {
+  .doc_pat_m_workspace_lower_row {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .doc_pat_m_workspace_upper_row,
+  .doc_pat_m_workspace_lower_row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 100%;
+  }
+
+  .doc_pat_m_split_info_container {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .doc_pat_m_filter_bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .doc_pat_m_search_box {
+    max-width: 100%;
+  }
+
+  .doc_pat_m_filter_controls_stack {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .doc_pat_m_date_filter_wrap,
+  .doc_pat_m_dropdown_filter_wrap {
+    flex: 1;
+    min-width: 150px;
+    justify-content: space-between;
+  }
+
+  .doc_pat_m_clear_filter_btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_pat_m_split_info_container {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_photo_right_panel {
+    height: 220px;
+    order: -1;
+  }
+
+  .doc_pat_m_vitals_horizontal_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doc_pat_m_contact_info_box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .doc_pat_m_root {
+    padding: 16px;
+  }
+
+  .doc_pat_m_vitals_horizontal_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_clickable_case_row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .doc_pat_m_case_row_right_flex {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px dashed var(--doc_pat_m_border);
+    padding-top: 10px;
+  }
+
+  .doc_pat_m_modal_meta_grid_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_pat_m_inspection_modal_card_blueprint {
+    width: 100%;
+  }
+
+  .doc_pat_m_rx_item_clinical_dosage_meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .doc_pat_m_divider_dot {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .doc_pat_m_table_container {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .doc_pat_m_table thead {
+    display: none;
+  }
+
+  .doc_pat_m_table tbody,
+  .doc_pat_m_table tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .doc_pat_m_table tr {
+    background: var(--doc_pat_m_white);
+    border: 1px solid var(--doc_pat_m_border);
+    border-radius: var(--doc_pat_m_radius);
+    padding: 16px;
+    margin-bottom: 12px;
+    gap: 12px;
+  }
+
+  .doc_pat_m_table td {
+    padding: 0;
+    border: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .doc_pat_m_table td.doc_pat_m_text_right {
+    border-top: 1px dashed var(--doc_pat_m_border);
+    padding-top: 12px;
+    margin-top: 4px;
+    justify-content: flex-end;
+  }
+
+  .doc_pat_m_btn_manage {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+}
+.doc_pat_m_dash_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.doc_pat_m_dash_header_text {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc_pat_m_dash_header_text h1 {
+  font-size: 1.85rem;
+  margin: 0;
+  font-weight: 800;
+  color: var(--sa-text);
+}
+
+.doc_pat_m_dash_header_text h1 span {
+  color: var(--sa-primary);
+}
+
+.doc_pat_m_dash_header_text p {
+  font-size: 0.9rem;
+  color: var(--sa-text-muted);
+  margin-top: 5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc_pat_m_dash_btn_primary {
+  flex-shrink: 0;
+  background: var(--sa-primary);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  height: fit-content;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.doc_pat_m_dash_btn_primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: var(--sa-text-muted);
+}
+
+.doc_pat_m_dash_btn_primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 122, 204, 0.3);
+}
+
+.spin {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_pat_m_dash_header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .doc_pat_m_dash_btn_primary {
+    width: fit-content;
+    justify-content: center;
+  }
+}
+/* --- REGISTRY CUSTOM PIC RENDERING MODIFICATIONS --- */
+.doc_pat_m_avatar_container_refined {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; /* Smooth circular frame geometry */
+  overflow: hidden;
+  background-color: #f1f5f9;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.doc_pat_m_table_patient_avatar_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- DEMOGRAPHICS METRIC ROW DESIGN OVERLAYS --- */
+.doc_pat_m_table_demographics_stack {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.doc_pat_m_demog_badge_gender {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: #e0f2fe;
+  color: #0369a1;
+  text-transform: uppercase;
+}
+
+.doc_pat_m_demog_span_item {
+  font-size: 0.82rem;
+  color: #475569;
+}
+
+.doc_pat_m_demog_span_item strong {
+  color: #0f172a;
+}

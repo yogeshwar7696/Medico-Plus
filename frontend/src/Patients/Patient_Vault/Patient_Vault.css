@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+.pat_vau_container {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  zoom: 0.9;
+}
+
+.pat_vau_loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 16px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: #007acc;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pat_vau_main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.pat_vau_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pat_vau_title h1 {
+  font-size: 2.2rem;
+  margin: 0 0 6px 0;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.pat_vau_title h1 span {
+  color: #007acc;
+}
+
+.pat_vau_title p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.pat_vau_upload_btn {
+  background: #007acc;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 20px rgba(0, 122, 204, 0.15);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pat_vau_upload_btn:hover {
+  background: #0062a3;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 122, 204, 0.25);
+}
+
+.pat_vau_controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pat_vau_search_bar {
+  position: relative;
+  width: 100%;
+}
+
+.pat_vau_search_bar input {
+  width: 100%;
+  padding: 14px 16px 14px 50px;
+  border-radius: 16px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.pat_vau_search_bar input:focus {
+  border-color: #007acc;
+}
+
+.search_icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007acc;
+}
+
+.pat_vau_tabs {
+  display: flex;
+  gap: 10px;
+}
+
+.pat_vau_tabs button {
+  padding: 10px 22px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.pat_vau_tabs button:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+.pat_vau_tabs button.active {
+  background: #007acc;
+  color: #ffffff;
+  border-color: #007acc;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.15);
+}
+
+/* --- PRODUCT MATRICES GRID DESIGN --- */
+.pat_vau_cards_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.pat_vau_file_card {
+  background: #ffffff;
+  border-radius: 28px;
+  border: 1px solid #e2e8f0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 220px;
+  justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pat_vau_file_card:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+}
+
+.vau_card_upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.file_icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file_icon.others {
+  background: #f1f5f9;
+  color: #64748b;
+}
+.file_icon.prescriptions {
+  background: #f0f7ff;
+  color: #007acc;
+}
+.file_icon.invoices {
+  background: #fff7ed;
+  color: #f59e0b;
+}
+
+.type_tag {
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.type_tag.others {
+  background: #f1f5f9;
+  color: #64748b;
+}
+.type_tag.prescriptions {
+  background: #f0f7ff;
+  color: #007acc;
+}
+.type_tag.invoices {
+  background: #fff7ed;
+  color: #f59e0b;
+}
+
+.vau_card_body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.vau_card_body h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.file_meta_sub {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.meta_divider {
+  color: #cbd5e1;
+}
+
+.sys_badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #10b981;
+  background: #f0fdf4;
+  padding: 2px 8px;
+  border-radius: 6px;
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.vau_card_actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.vau_actions_left {
+  display: flex;
+  align-items: center;
+}
+
+.vau_actions_right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vau_icon_btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.vau_icon_btn:hover {
+  color: #007acc;
+  background: #f0f7ff;
+  border-color: #cbd5e1;
+}
+
+.vau_direct_order_btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.vau_direct_order_btn:hover {
+  background: #007acc;
+}
+
+.status_ordered {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #10b981;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #f0fdf4;
+  padding: 6px 14px;
+  border-radius: 10px;
+}
+
+.pat_vau_empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  color: #64748b;
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.pat_vau_empty p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* --- RESPONSIVENESS CRITERIA --- */
+@media (max-width: 768px) {
+  .pat_vau_main {
+    padding: 24px;
+  }
+  .pat_vau_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .pat_vau_upload_btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .pat_vau_tabs {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  .pat_vau_cards_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .pat_vau_main {
+    padding: 16px;
+  }
+  .pat_vau_title h1 {
+    font-size: 1.8rem;
+  }
+}

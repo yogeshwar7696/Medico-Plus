@@ -1,0 +1,772 @@
+/* ==========================================================================
+   MEDICO+ ENTERPRISE: DEPARTMENT MANAGEMENT SYSTEM STYLESHEET
+   ========================================================================== */
+
+:root {
+  --med-primary: #007acc;
+  --med-primary-light: #f0f7ff;
+  --med-primary-dark: #0062a3;
+  --med-success: #10b981;
+  --med-warning: #f59e0b;
+  --med-danger: #ef4444;
+  --med-text: #1e293b;
+  --med-text-muted: #64748b;
+  --med-border: #e2e8f0;
+  --med-card: #ffffff;
+  --med-bg: #f8fafc;
+  --med-gradient: linear-gradient(135deg, #007acc 0%, #00a3e0 100%);
+}
+
+.adm_dept_m_root {
+  min-height: 100vh;
+  background-color: var(--med-bg);
+  font-family: "Poppins", sans-serif;
+  color: var(--med-text);
+  padding: 0 40px 40px 40px;
+  zoom: 0.7;
+  max-width: 1450px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. HEADER BRANDING & ACTION SUITE
+   ========================================================================== */
+.adm_dept_m_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+.adm_dept_m_branding h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin: 0;
+}
+
+.adm_dept_m_branding h1 span {
+  color: var(--med-primary);
+  font-weight: 300;
+}
+
+.adm_dept_m_branding p {
+  color: var(--med-text-muted);
+  font-size: 0.9rem;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.adm_dept_m_btn_primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--med-gradient);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  gap: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+  transition: all 0.3s ease;
+}
+
+.adm_dept_m_btn_primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 122, 204, 0.3);
+}
+
+/* ==========================================================================
+   2. REPUTATION KPI BENTO ANALYTICS STRIP
+   ========================================================================== */
+.adm_dept_m_stats_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.adm_dept_m_stat_tile {
+  background: var(--med-card);
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.adm_dept_m_tile_icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.adm_dept_m_tile_meta h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin: 0;
+}
+
+.adm_dept_m_tile_meta p {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--med-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 2px 0 0 0;
+}
+
+/* ==========================================================================
+   3. INTERNAL FILTER TOOLBAR LAYER
+   ========================================================================== */
+.adm_dept_m_control_bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--med-border);
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
+.adm_dept_m_search_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f1f5f9;
+  padding: 8px 15px;
+  border-radius: 12px;
+  flex: 1;
+  max-width: 450px;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.adm_dept_m_search_wrapper:focus-within {
+  background: white;
+  border-color: var(--med-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.adm_dept_m_search_wrapper svg {
+  color: var(--med-primary);
+}
+
+.adm_dept_m_search_wrapper input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  color: var(--med-text);
+}
+
+.adm_dept_m_view_toggles {
+  display: flex;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.adm_dept_m_view_toggles button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 9px;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  color: var(--med-text-muted);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.adm_dept_m_view_toggles button.active {
+  background: white;
+  color: var(--med-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   4. DYNAMIC VIEWPORTS: SMART GRID DEPLOYMENT
+   ========================================================================== */
+.adm_dept_m_viewport_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.adm_dept_m_card {
+  background: white;
+  border-radius: var(--med-radius);
+  border: 1px solid var(--med-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.adm_dept_m_card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 122, 204, 0.08);
+}
+
+.adm_dept_m_card_accent {
+  height: 6px;
+  width: 100%;
+}
+
+.adm_dept_m_card_content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.adm_dept_m_card_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.adm_dept_m_card_head h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.adm_dept_m_status_tag {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.adm_dept_m_status_tag.active {
+  background: #dcfce7;
+  color: #166534;
+}
+.adm_dept_m_status_tag.maintenance {
+  background: #fef9c3;
+  color: #854d0e;
+}
+.adm_dept_m_status_tag.decommissioned {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.adm_dept_m_card_body_nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.adm_dept_m_info_node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--med-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.adm_dept_m_quality_marker {
+  color: #eab308 !important;
+  font-weight: 700;
+}
+
+.adm_dept_m_card_footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--med-border);
+  display: flex;
+  gap: 8px;
+  background: #fafafa;
+}
+
+.adm_dept_m_btn_icon {
+  flex: 1;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--med-border);
+  background: white;
+  color: var(--med-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.adm_dept_m_btn_icon.view:hover {
+  color: var(--med-primary);
+  background: #e0f2fe;
+  border-color: #bae6fd;
+}
+.adm_dept_m_btn_icon.edit:hover {
+  color: #10b981;
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+.adm_dept_m_btn_icon.delete:hover {
+  color: var(--med-danger);
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+/* ==========================================================================
+   5. DYNAMIC VIEWPORTS: INSTITUTIONAL LEDGER (TABLE ROW MATRIX)
+   ========================================================================== */
+.adm_dept_m_table_scroll_frame {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.adm_dept_m_audit_ledger {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adm_dept_m_audit_ledger th {
+  background: #f8fafc;
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 0.72rem;
+  color: var(--med-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--med-border);
+  font-weight: 800;
+}
+
+.adm_dept_m_audit_ledger td {
+  padding: 18px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  color: #334155;
+  vertical-align: middle;
+}
+
+.adm_dept_m_audit_ledger tbody tr:hover td {
+  background: #f8fafc;
+}
+
+.adm_dept_m_pill_badge {
+  background: var(--med-primary-light);
+  color: var(--med-primary);
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.adm_dept_m_table_star {
+  color: #eab308;
+  font-weight: 700;
+}
+
+.adm_dept_m_action_row_layout {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+   6. COMPACT SYSTEM CONFIGURATION DRAWER (FORM LAYER NO-SCROLL)
+   ========================================================================== */
+.adm_dept_m_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.adm_dept_m_modal_box {
+  background: white;
+  width: 100%;
+  max-width: 620px;
+  max-height: 100vh;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--med-border);
+  overflow: hidden;
+}
+
+.adm_dept_m_modal_header {
+  padding: 10px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.adm_dept_m_modal_header h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin: 0;
+}
+
+.adm_dept_m_modal_header h3 span {
+  color: var(--med-primary);
+}
+
+.adm_dept_m_close_modal_trigger {
+  background: transparent;
+  border: none;
+  color: var(--med-text-muted);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+.adm_dept_m_close_modal_trigger:hover {
+  color: var(--med-danger);
+  background: #fff1f2;
+}
+
+.adm_dept_m_form_body {
+  padding: 15px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+.adm_dept_m_form_field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.adm_dept_m_form_field label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #475569;
+  text-transform: uppercase;
+}
+
+.adm_dept_m_form_field input,
+.adm_dept_m_form_field select {
+  height: 35px;
+  border-radius: 10px;
+  border: 1.5px solid var(--med-border);
+  padding: 0 12px;
+  font-size: 13.5px;
+  font-weight: 500;
+  outline: none;
+  background: var(--med-bg);
+  box-sizing: border-box;
+}
+
+.adm_dept_m_form_field input:focus,
+.adm_dept_m_form_field select:focus {
+  border-color: var(--med-primary);
+  background: white;
+  box-shadow: 0 0 0 4px var(--med-primary-light);
+}
+
+.adm_dept_m_full_width {
+  grid-column: span 2;
+}
+
+/* HOD Search Dropdown Interface Layout */
+.adm_dept_m_input_icon_box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.adm_dept_m_inner_search_icon {
+  position: absolute;
+  left: 12px;
+  color: var(--med-text-muted);
+}
+
+.adm_dept_m_input_icon_box input {
+  padding-left: 34px !important;
+}
+
+.adm_dept_m_hod_dropdown_scroller {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  max-height: 130px;
+  overflow-y: auto;
+  z-index: 1100;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+}
+
+.adm_dept_m_dropdown_row {
+  padding: 10px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+  text-align: left;
+}
+
+.adm_dept_m_dropdown_row:hover {
+  background: var(--med-primary-light);
+  color: var(--med-primary);
+}
+
+/* Specialist Checklist Matrix Array Box */
+.adm_dept_m_search_mini_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.adm_dept_m_search_mini_wrapper svg {
+  position: absolute;
+  left: 10px;
+  color: var(--med-text-muted);
+}
+
+.adm_dept_m_search_mini_wrapper input {
+  height: 28px !important;
+  font-size: 12px !important;
+  padding-left: 28px !important;
+  border-radius: 6px !important;
+}
+
+.adm_dept_m_checkbox_scroll_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-height: 105px;
+  overflow-y: auto;
+  background: var(--med-bg);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.5px solid var(--med-border);
+}
+
+.adm_dept_m_checkbox_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.adm_dept_m_color_picker {
+  padding: 2px !important;
+  cursor: pointer;
+}
+
+.adm_dept_m_submit_btn {
+  grid-column: span 2;
+  height: 42px;
+  background: var(--med-gradient);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   7. DEEP METRICS CORE COMPONENT SPEC VIEW (VIEW ONLY LAYER)
+   ========================================================================== */
+.adm_dept_m_view_only_adjustment {
+  max-width: 680px !important;
+}
+
+.adm_dept_m_view_only_body {
+  padding: 24px;
+}
+
+.adm_dept_m_detail_node_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.adm_dept_m_node_field {
+  background: var(--med-bg);
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--med-border);
+}
+
+.adm_dept_m_node_field label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--med-text-muted);
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.adm_dept_m_node_field strong {
+  font-size: 14px;
+  color: var(--med-text);
+}
+
+.full_width_block {
+  grid-column: span 2;
+  margin-top: 16px;
+}
+
+.full_width_block p {
+  margin: 4px 0 0 0;
+  font-weight: 600;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. SYSTEM ENGINE STATE RUNTIMES (SPINNERS, BLANKS)
+   ========================================================================== */
+.adm_dept_m_loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  gap: 12px;
+  color: var(--med-text);
+  font-weight: 700;
+}
+
+.adm_dept_m_spin {
+  animation: adm_dept_spinning 1s linear infinite;
+}
+
+@keyframes adm_dept_spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.adm_dept_m_empty_notice {
+  text-align: center;
+  padding: 60px;
+  color: var(--med-text-muted);
+  background: white;
+  border-radius: 20px;
+  border: 1px dashed #cbd5e1;
+}
+
+.adm_dept_m_empty_notice p {
+  margin: 10px 0 0 0;
+  font-weight: 600;
+}
+
+.adm_dept_m_text_right {
+  text-align: right;
+}
+
+/* ==========================================================================
+   9. CROSS-DEVICE RESPONSIVE MEDIA FILTERS
+   ========================================================================== */
+@media screen and (max-width: 1200px) {
+  .adm_dept_m_root {
+    padding: 0 20px 20px 20px;
+    zoom: 0.85;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .adm_dept_m_stats_grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .adm_dept_m_control_bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+  .adm_dept_m_search_wrapper {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .adm_dept_m_root {
+    zoom: 1;
+    padding: 16px;
+  }
+  .adm_dept_m_header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .adm_dept_m_btn_primary {
+    width: 100%;
+  }
+  .adm_dept_m_stats_grid {
+    grid-template-columns: 1fr;
+  }
+  .adm_dept_m_form_body {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .adm_dept_m_full_width,
+  .adm_dept_m_submit_btn {
+    grid-column: span 1;
+  }
+  .adm_dept_m_checkbox_scroll_container {
+    grid-template-columns: 1fr;
+  }
+  .adm_dept_m_detail_node_grid {
+    grid-template-columns: 1fr;
+  }
+  .full_width_block {
+    grid-column: span 1;
+  }
+}

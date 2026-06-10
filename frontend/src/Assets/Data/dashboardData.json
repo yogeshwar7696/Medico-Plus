@@ -1,0 +1,123 @@
+{
+  "appointmentStats": [
+    {
+      "id": 1,
+      "label": "Scheduled",
+      "count": 12,
+      "color": "#3b82f6",
+      "icon": "Calendar"
+    },
+    {
+      "id": 2,
+      "label": "Completed",
+      "count": 8,
+      "color": "#10b981",
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 3,
+      "label": "Cancelled",
+      "count": 2,
+      "color": "#ef4444",
+      "icon": "XCircle"
+    },
+    {
+      "id": 4,
+      "label": "No-show",
+      "count": 1,
+      "color": "#f59e0b",
+      "icon": "AlertCircle"
+    }
+  ],
+  "pieChartData": [
+    {
+      "name": "Scheduled",
+      "value": 12,
+      "fill": "#3b82f6"
+    },
+    {
+      "name": "Completed",
+      "value": 8,
+      "fill": "#10b981"
+    },
+    {
+      "name": "Cancelled",
+      "value": 2,
+      "fill": "#ef4444"
+    },
+    {
+      "name": "No-show",
+      "value": 1,
+      "fill": "#f59e0b"
+    }
+  ],
+  "trendData": [
+    {
+      "time": "9AM",
+      "appointments": 3
+    },
+    {
+      "time": "10AM",
+      "appointments": 5
+    },
+    {
+      "time": "11AM",
+      "appointments": 4
+    },
+    {
+      "time": "12PM",
+      "appointments": 6
+    },
+    {
+      "time": "1PM",
+      "appointments": 7
+    },
+    {
+      "time": "2PM",
+      "appointments": 5
+    },
+    {
+      "time": "3PM",
+      "appointments": 8
+    },
+    {
+      "time": "4PM",
+      "appointments": 6
+    },
+    {
+      "time": "5PM",
+      "appointments": 4
+    },
+    {
+      "time": "6PM",
+      "appointments": 3
+    },
+    {
+      "time": "7PM",
+      "appointments": 2
+    }
+  ],
+  "doctorActivity": [
+    {
+      "id": 1,
+      "status": "Available",
+      "count": 10,
+      "color": "#10b981",
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 2,
+      "status": "Busy",
+      "count": 5,
+      "color": "#f59e0b",
+      "icon": "AlertCircle"
+    },
+    {
+      "id": 3,
+      "status": "Offline",
+      "count": 3,
+      "color": "#6b7280",
+      "icon": "XCircle"
+    }
+  ]
+}

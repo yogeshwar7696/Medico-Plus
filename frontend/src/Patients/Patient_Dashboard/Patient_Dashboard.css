@@ -1,0 +1,659 @@
+/* ==========================================================================
+   MEDICO+ HEALTH ENTERPRISE: PATIENT DASHBOARD MASTER ARCHITECTURE
+   ========================================================================== */
+
+:root {
+  --med-primary: #007acc;
+  --med-primary-light: #f0f7ff;
+  --med-primary-dark: #0062a3;
+  --med-success: #10b981;
+  --med-success-light: #d1fae5;
+  --med-warning: #f59e0b;
+  --med-danger: #ef4444;
+  --med-text: #1e293b;
+  --med-text-muted: #64748b;
+  --med-border: #e2e8f0;
+  --med-card: #ffffff;
+  --med-bg: #f8fafc;
+  --med-gradient: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+}
+
+.pat_dash_container {
+  display: grid;
+  grid-template-columns: 2.7fr 0.8fr !important;
+  gap: 15px;
+  padding: 40px 20px !important;
+  max-width: 1600px;
+  margin: 0 auto;
+  zoom: 0.9 !important;
+  box-sizing: border-box;
+  background: radial-gradient(
+    circle at top left,
+    #eff6ff 0%,
+    #f8fafc 45%,
+    #f1f5f9 100%
+  );
+  min-height: 100vh;
+}
+
+
+.pat_dash_main_content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0px;
+}
+
+/* Greeting Section */
+.pat_dash_welcome .pat_dash_h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 600;
+  color: var(--med-text);
+}
+
+.pat_dash_welcome .pat_dash_h1 .pat_dash_span {
+  color: var(--med-primary);
+  font-weight: 900;
+  font-size: 3rem;
+}
+
+.pat_dash_welcome .pat_dash_p {
+  color: var(--med-text-muted);
+  margin: 5px 0 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* Hero Branding Layer */
+.pat_dash_hero_banner {
+  background: var(--med-gradient);
+  border-radius: 40px;
+  padding: 50px;
+  color: white;
+  position: relative;
+  overflow: visible;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.4);
+}
+
+.pat_dash_hero_text_content .pat_dash_h2 {
+  font-size: 2.6rem;
+  margin: 0;
+  font-weight: 800;
+}
+
+.pat_dash_hero_text_content .pat_dash_h2 .pat_dash_span {
+  color: white;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.pat_dash_hero_text_content .pat_dash_p {
+  max-width: 450px;
+  margin-top: 15px;
+  opacity: 0.8;
+  font-size: 1.2rem;
+}
+
+.pat_dash_hero_floating_img {
+  position: absolute;
+  right: -30px;
+  bottom: -20px;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* Consultation Trigger Row */
+.pat_dash_booking_card {
+  background: var(--med-card);
+  border: 1px solid var(--med-border);
+  border-left: 6px solid var(--med-primary);
+  border-radius: 25px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 90px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.pat_dash_booking_left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pat_dash_booking_icon_box {
+  background: var(--med-primary-light);
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pat_dash_booking_text .pat_dash_h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--med-text);
+}
+
+.pat_dash_booking_text .pat_dash_p {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--med-text-muted);
+  font-weight: 500;
+}
+
+.pat_dash_book_btn_animated {
+  background: var(--med-primary);
+  color: white;
+  border: none;
+  padding: 20px 25px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: pat_dash_pulse_glow 2s infinite;
+}
+
+.pat_dash_book_btn_animated:hover {
+  background: #005fa3;
+  transform: scale(1.03);
+}
+
+.pat_dash_book_btn_animated::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  animation: pat_dash_shine 3s infinite;
+}
+
+@keyframes pat_dash_pulse_glow {
+  0% {
+    box-shadow: 0 0 0 0 #005fa3;
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(0, 122, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(0, 122, 204, 0);
+  }
+}
+
+@keyframes pat_dash_shine {
+  0% {
+    left: -60%;
+  }
+  20% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+/* Health Tracker Vitals Block */
+.pat_dash_vitals_section_header .pat_dash_h3 {
+  font-weight: 800;
+  color: var(--med-text);
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+}
+
+.pat_dash_vitals_cards_grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.pat_dash_vital_card {
+  background: var(--med-card);
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--med-border);
+  border-bottom: 4px solid var(--med-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.3s;
+}
+
+.pat_dash_vital_card:hover {
+  transform: translateY(-5px);
+}
+
+.pat_dash_vital_card:nth-child(odd) {
+  border-bottom-color: #005fa3;
+}
+.pat_dash_vital_card:nth-child(even) {
+  border-bottom-color: #10b981;
+}
+
+.pat_dash_vital_info .pat_dash_span {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pat_dash_vital_info .pat_dash_strong {
+  font-size: 1.2rem;
+  color: var(--med-text);
+  font-weight: 800;
+}
+
+.pat_dash_vital_info .pat_dash_small {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   2. RIGHT ASIDE PANEL SUITE
+   ========================================================================== */
+.pat_dash_sidebar_widgets {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pat_dash_sidebar_widget {
+  background: var(--med-card);
+  border: 1px solid var(--med-border);
+  border-radius: 30px;
+  padding: 25px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Live Calendar Matrix */
+.pat_dash_widget_calendar_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pat_dash_calendar_live_clock {
+  display: block;
+  font-weight: 800;
+  color: var(--med-primary);
+  font-size: 1.8rem;
+}
+
+.pat_dash_calendar_full_date {
+  font-size: 0.9rem;
+  color: var(--med-text);
+}
+
+.pat_dash_calendar_grid_ui {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  text-align: center;
+}
+
+.pat_dash_calendar_day_label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: #cbd5e1;
+  margin-bottom: 5px;
+}
+
+.pat_dash_calendar_date_cell {
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  color: var(--med-text);
+}
+
+.pat_dash_calendar_today_active {
+  background: var(--med-primary);
+  color: white !important;
+  font-weight: 700;
+}
+
+/*    RESTORED: Traditional Queue Monitor "On Deck" Button Framework */
+.pat_dash_widget_on_deck {
+  display: flex;
+  flex-direction: column;
+  min-height: 320px;
+}
+
+.pat_dash_on_deck_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pat_dash_on_deck_flex {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pat_dash_on_deck_flex .pat_dash_h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--med-text);
+}
+
+.pat_dash_on_deck_tag {
+  background: #f0f7ff;
+  color: var(--med-primary);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.pat_dash_on_deck_content_wrapper,
+.pat_dash_on_deck_empty_container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pat_dash_on_deck_hero {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.pat_dash_on_deck_avatar {
+  width: 50px;
+  height: 50px;
+  background: #e0f2fe;
+  color: var(--med-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.pat_dash_on_deck_meta .pat_dash_strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--med-text);
+}
+
+.pat_dash_on_deck_meta .pat_dash_span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.pat_dash_on_deck_bento_stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pat_dash_bento_tile {
+  background: #f8fafc;
+  padding: 12px;
+  border-radius: 15px;
+  flex: 1;
+}
+
+.pat_dash_bento_tile .pat_dash_span {
+  display: block;
+  font-size: 0.65rem;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.pat_dash_bento_tile .pat_dash_strong {
+  font-size: 0.9rem;
+  color: var(--med-text);
+}
+
+.pat_dash_on_deck_empty_container {
+  justify-content: center;
+  align-items: center;
+  background: #fcfdfe;
+  border-radius: 20px;
+  border: 2px dashed #e2e8f0;
+  margin-top: 10px;
+}
+
+.pat_dash_on_deck_action_btn {
+  margin-top: auto;
+  width: 100%;
+  background: var(--med-primary);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+
+.pat_dash_on_deck_action_btn:hover {
+  background: var(--med-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. HORIZONTAL DATA SHEETS: SCHEDULE & HISTORY
+   ========================================================================== */
+.pat_dash_row_4_full_width {
+  grid-column: 1 / span 2;
+  display: flex;
+  width: 100%;
+  gap: 25px;
+  margin-top: 10px;
+}
+.pat_dash_on_deck_avatar {
+  width: 50px;
+  height: 50px;
+  background: #e0f2fe;
+  color: var(--med-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.pat_dash_on_deck_img_cropped {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pat_dash_on_deck_initials_fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pat_dash_list_card_half {
+  flex: 1;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pat_dash_list_header .pat_dash_h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin-bottom: 10px;
+}
+
+.pat_dash_list_body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pat_dash_list_item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.pat_dash_list_item:hover {
+  background: white;
+  border-color: #e2e8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.pat_dash_item_info {
+  flex: 1;
+}
+
+.pat_dash_item_info .pat_dash_strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--med-text);
+  margin-bottom: 2px;
+}
+
+.pat_dash_item_info .pat_dash_span {
+  font-size: 0.85rem;
+  color: var(--med-text-muted);
+  font-weight: 500;
+}
+
+.pat_dash_status_badge_done {
+  background: var(--med-success-light);
+  color: #065f46;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.pat_dash_empty_text {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+.pat_dash_loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  color: var(--med-text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. RESPONSIBILITY MATRIX
+   ========================================================================== */
+@media screen and (max-width: 1400px) {
+  .pat_dash_container {
+    padding: 10px 24px;
+    zoom: 0.85;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pat_dash_container {
+    grid-template-columns: 1fr !important;
+    zoom: 0.9;
+  }
+  .pat_dash_sidebar_widgets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .pat_dash_row_4_full_width {
+    grid-column: span 1;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .pat_dash_vitals_cards_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pat_dash_hero_floating_img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pat_dash_widget_calendar {
+    display: none !important;
+  }
+  .pat_dash_sidebar_widgets {
+    grid-template-columns: 1fr;
+  }
+  .pat_dash_row_4_full_width {
+    flex-direction: column !important;
+  }
+  .pat_dash_booking_card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .pat_dash_book_btn_animated {
+    justify-content: center;
+  }
+  .pat_dash_welcome .pat_dash_h1 {
+    font-size: 2rem;
+  }
+  .pat_dash_welcome .pat_dash_h1 .pat_dash_span {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .pat_dash_vitals_cards_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pat_dash_hero_banner {
+    padding: 24px;
+  }
+  .pat_dash_hero_text_content .pat_dash_h2 {
+    font-size: 1.8rem;
+  }
+}

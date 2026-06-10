@@ -1,0 +1,992 @@
+/* ==========================================================================
+   MEDICO+ ENTERPRISE REPUTATION & SENTIMENT SYSTEMS (COMPREHENSIVE SPEC)
+   ========================================================================== */
+
+:root {
+  --med-primary: #007acc;
+  --med-primary-light: #f0f7ff;
+  --med-secondary: #00d2ff;
+  --med-success: #10b981;
+  --med-warning: #f59e0b;
+  --med-danger: #ef4444;
+  --med-text: #1e293b;
+  --med-text-muted: #94a3b8;
+  --med-border: #e2e8f0;
+  --med-card: #ffffff;
+  --med-bg: #f8fafc;
+  --med-gradient: linear-gradient(135deg, #007acc 0%, #00a3e0 100%);
+}
+
+.admin_rev_intel_root {
+  padding: 0 40px 40px 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  zoom: 0.7;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   CORE CONSOLE REGISTRY HEADER STYLING
+   ========================================================================== */
+
+.admin_rev_intel_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+.admin_rev_intel_branding h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--med-text);
+  margin: 0;
+}
+
+.admin_rev_intel_cyan {
+  color: var(--med-primary);
+  font-weight: 300;
+}
+
+.admin_rev_intel_branding p {
+  color: var(--med-text-muted);
+  font-weight: 600;
+  margin: 6px 0 0 0;
+  font-size: 0.9rem;
+}
+
+.admin_rev_intel_header_btns {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin_rev_intel_sync_btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--med-border);
+  background: white;
+  color: var(--med-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin_rev_intel_sync_btn:hover {
+  border-color: var(--med-primary);
+  color: var(--med-primary);
+}
+
+.admin_rev_intel_primary_btn {
+  height: 42px;
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 0 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.admin_rev_intel_primary_btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   TIER 1: KPI REPUTATION SUMMARY METRICS
+   ========================================================================== */
+
+.admin_rev_intel_kpi_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.admin_rev_intel_kpi_card {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.admin_rev_intel_kpi_icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin_rev_intel_kpi_icon.blue {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+.admin_rev_intel_kpi_icon.green {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+.admin_rev_intel_kpi_icon.red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.admin_rev_intel_kpi_info span {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--med-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.admin_rev_intel_kpi_info strong {
+  font-size: 1.2rem;
+  color: var(--med-text);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   TIER 2: COGNITIVE REAL-TIME SYSTEM OVERLAYS
+   ========================================================================== */
+
+.admin_rev_intel_insights_ticker {
+  display: flex;
+  gap: 16px;
+  background: #f1f5f9;
+  padding: 14px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--med-primary);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.admin_rev_intel_ticker_tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #0369a1;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.admin_rev_intel_ticker_metric {
+  font-size: 0.85rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.admin_rev_intel_alert_text {
+  font-weight: 700;
+  color: var(--med-danger);
+}
+
+.admin_rev_intel_ticker_divider {
+  height: 14px;
+  width: 1px;
+  background: #cbd5e1;
+}
+
+.admin_rev_intel_ticker_keywords {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #334155;
+  font-weight: 500;
+}
+
+.admin_rev_intel_keyword_badge {
+  background: #e2e8f0;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* ==========================================================================
+   TIER 3: INTERACTIVE CROSS-FILTERING TRACK BANNER
+   ========================================================================== */
+
+.admin_rev_intel_dist_banner {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.admin_rev_intel_dist_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.admin_rev_intel_dist_header span {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--med-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin_rev_intel_reset_filter_btn {
+  background: var(--med-danger);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.admin_rev_intel_dist_tracks_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin_rev_intel_dist_item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin_rev_intel_dist_item:hover,
+.admin_rev_intel_dist_item.active_star_track_row {
+  background: var(--med-primary-light);
+}
+
+.admin_rev_intel_dist_label {
+  font-weight: 700;
+  color: var(--med-text);
+  font-size: 13px;
+  width: 32px;
+}
+
+.admin_rev_intel_dist_bar_bg {
+  flex: 1;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin_rev_intel_dist_bar_fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.admin_rev_intel_dist_count {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--med-text-muted);
+  width: 80px;
+  text-align: right;
+}
+
+/* ==========================================================================
+   TIER 4: CLINICIAN ROSTER RATINGS LEADERBOARDS
+   ========================================================================== */
+
+.admin_rev_intel_leaderboard_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.admin_rev_intel_leaderboard_col {
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.admin_rev_intel_col_header_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin_rev_intel_col_title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--med-text);
+  text-transform: uppercase;
+}
+
+.admin_rev_intel_count_pill {
+  background: #f1f5f9;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #475569;
+}
+
+.admin_rev_intel_count_pill.red {
+  background: #fee2e2;
+  color: var(--med-danger);
+}
+
+.admin_rev_intel_list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin_rev_intel_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 16px;
+  border: 1px solid #f8fafc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin_rev_intel_row:hover {
+  background: #f8fafc;
+  transform: translateX(4px);
+}
+
+.admin_rev_intel_row_main {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin_rev_intel_row_main img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.admin_rev_intel_row_info strong {
+  display: block;
+  font-size: 14px;
+  color: var(--med-text);
+}
+
+.admin_rev_intel_row_info span {
+  font-size: 12px;
+  color: var(--med-text-muted);
+}
+
+.admin_rev_intel_score {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.admin_rev_intel_score.positive {
+  background: #dcfce7;
+  color: #166534;
+}
+.admin_rev_intel_score.negative {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ==========================================================================
+   TIER 5: ISOLATED WORKSPACE DRILLED-DOWN TRACK FEED
+   ========================================================================== */
+
+.admin_rev_intel_drilldown_container {
+  margin-top: 25px;
+  background: white;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--med-border);
+}
+
+.admin_rev_intel_drilldown_title {
+  margin: 0 0 16px 0;
+  color: var(--med-text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+}
+
+.admin_rev_intel_drilldown_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.admin_rev_intel_drilldown_card {
+  border: 1px solid var(--med-border);
+  padding: 16px;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.admin_rev_intel_drilldown_card_top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.admin_rev_intel_drilldown_card_top strong {
+  color: #0f172a;
+  font-size: 0.9rem;
+}
+
+.admin_rev_intel_drilldown_card_top span {
+  font-size: 0.8rem;
+  color: var(--med-text-muted);
+}
+
+.admin_rev_intel_drilldown_card p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #334155;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   WORKSPACE ELEMENT TARGETS: INDEPENDENT ISOLATED CLINICIAN VIEW
+   ========================================================================== */
+
+.admin_rev_intel_workspace_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin_rev_intel_back_btn {
+  background: #1e293b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin_rev_intel_back_btn:hover {
+  background: #000;
+  transform: translateX(-4px);
+}
+
+.admin_rev_intel_ws_controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.admin_rev_intel_search_mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 0 14px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--med-border);
+}
+
+.admin_rev_intel_search_mini input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  width: 180px;
+  color: var(--med-text);
+  font-weight: 600;
+  background: transparent;
+}
+
+.admin_rev_intel_ws_controls select {
+  padding: 0 14px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid var(--med-border);
+  font-weight: 700;
+  color: #475569;
+  outline: none;
+  cursor: pointer;
+  background: white;
+}
+
+.admin_rev_intel_workspace_hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--med-gradient);
+  padding: 30px;
+  border-radius: 28px;
+  color: white;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.15);
+}
+
+.admin_rev_intel_hero_identity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.admin_rev_intel_hero_identity img {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.25);
+}
+
+.admin_rev_intel_hero_identity h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.admin_rev_intel_hero_identity p {
+  margin: 4px 0 0 0;
+  opacity: 0.9;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin_rev_intel_status_tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+.admin_rev_intel_hero_stats {
+  display: flex;
+  gap: 30px;
+}
+
+.admin_rev_intel_h_stat {
+  text-align: right;
+}
+
+.admin_rev_intel_h_stat small {
+  display: block;
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin_rev_intel_h_stat strong {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.admin_rev_intel_masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.admin_rev_intel_card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--med-border);
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+
+.admin_rev_intel_card:hover {
+  transform: translateY(-4px);
+}
+
+.admin_rev_intel_card.critical_border {
+  border-left: 6px solid var(--med-danger);
+}
+
+.admin_rev_intel_card_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.admin_rev_intel_patient_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin_rev_intel_p_avatar {
+  width: 32px;
+  height: 32px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: var(--med-primary);
+  font-size: 13px;
+}
+
+.admin_rev_intel_stars {
+  display: flex;
+  gap: 1px;
+}
+
+.admin_rev_intel_text {
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.5;
+  font-style: italic;
+  margin: 10px 0;
+  flex: 1;
+}
+
+.admin_rev_intel_quote_icon {
+  color: #cbd5e1;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+.admin_rev_intel_card_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f8fafc;
+  padding-top: 14px;
+  margin-top: auto;
+}
+
+.admin_rev_intel_meta_group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--med-text-muted);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.admin_rev_intel_card_actions {
+  display: flex;
+  gap: 8px;
+}
+
+.admin_rev_intel_action_icon,
+.admin_rev_intel_delete {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.admin_rev_intel_action_icon {
+  background: #f8fafc;
+  color: var(--med-text-muted);
+}
+
+.admin_rev_intel_action_icon:hover {
+  background: var(--med-primary);
+  color: white;
+}
+
+.admin_rev_intel_delete {
+  background: #fff1f2;
+  color: var(--med-danger);
+}
+
+.admin_rev_intel_delete:hover {
+  background: var(--med-danger);
+  color: white;
+}
+
+/* ==========================================================================
+   VISUAL INTERACTION SYSTEM FALLBACK RUNTIMES
+   ========================================================================== */
+
+.admin_rev_intel_spin {
+  animation: med_rev_spinning 1s linear infinite;
+}
+
+@keyframes med_rev_spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.admin_rev_intel_loader_frame,
+.admin_rev_intel_perfect_state,
+.admin_rev_intel_empty_state_full {
+  text-align: center;
+  color: var(--med-text-muted);
+  padding: 40px;
+  font-weight: 500;
+}
+
+.admin_rev_intel_loader_frame {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
+
+.admin_rev_intel_drilldown_empty {
+  grid-column: span 3;
+  color: var(--med-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   CROSS-DEVICE LAYOUT RESPONSIVE MEDIA ENGINES
+   ========================================================================== */
+
+@media screen and (max-width: 1200px) {
+  .admin_rev_intel_root {
+    padding: 0 20px 20px 20px;
+    zoom: 0.85;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .admin_rev_intel_kpi_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .admin_rev_intel_dist_banner {
+    padding: 20px;
+  }
+  .admin_rev_intel_dist_tracks_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .admin_rev_intel_leaderboard_grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .admin_rev_intel_root {
+    zoom: 1;
+    padding: 16px;
+  }
+  .admin_rev_intel_header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .admin_rev_intel_header_btns {
+    width: 100%;
+  }
+  .admin_rev_intel_sync_btn,
+  .admin_rev_intel_primary_btn {
+    flex: 1;
+    justify-content: center;
+  }
+  .admin_rev_intel_dist_tracks_container {
+    grid-template-columns: 1fr;
+  }
+  .admin_rev_intel_workspace_hero {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 20px;
+  }
+  .admin_rev_intel_hero_stats {
+    justify-content: space-between;
+  }
+  .admin_rev_intel_workspace_nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .admin_rev_intel_search_mini {
+    width: 100%;
+  }
+  .admin_rev_intel_search_mini input {
+    width: 100%;
+  }
+  .admin_rev_intel_ws_controls select {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .admin_rev_intel_kpi_grid {
+    grid-template-columns: 1fr;
+  }
+  .admin_rev_intel_insights_ticker {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .admin_rev_intel_ticker_divider {
+    display: none;
+  }
+  .admin_rev_intel_hero_identity {
+    flex-direction: column;
+    text-align: center;
+  }
+  .admin_rev_intel_hero_stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .admin_rev_intel_h_stat {
+    text-align: center;
+  }
+}
+/* --- TIER 2: STAR FILTER MATRIX --- */
+.adm_rev_intel_star_filter_matrix {
+  background: white;
+  padding: 24px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+  border: 1px solid var(--med-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.adm_rev_intel_matrix_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.adm_rev_intel_header_label {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--med-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adm_rev_intel_reset_btn {
+  background: #fff1f2;
+  color: var(--med-danger);
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.adm_rev_intel_reset_btn:hover {
+  background: var(--med-danger);
+  color: white;
+}
+
+.adm_rev_intel_matrix_body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adm_rev_intel_matrix_row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.adm_rev_intel_matrix_row:hover,
+.adm_rev_intel_matrix_row.active {
+  background: #f8fafc;
+}
+
+.adm_rev_intel_star_label {
+  font-weight: 800;
+  color: var(--med-text);
+  font-size: 13px;
+  width: 40px;
+}
+
+.adm_rev_intel_track_bg {
+  flex: 1;
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.adm_rev_intel_track_fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.adm_rev_intel_track_count {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--med-text-muted);
+  width: 60px;
+  text-align: right;
+}

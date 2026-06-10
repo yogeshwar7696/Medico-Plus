@@ -1,0 +1,499 @@
+/* 1. GLOBAL FOUNDATIONS */
+.admin_rev_m_wrapper {
+  animation: admin_rev_m_FadeIn 0.5s ease-out;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  zoom: 0.7;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 40px 40px 40px;
+  color: #1e293b;
+}
+
+@keyframes admin_rev_m_FadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes admin_rev_m_pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* 2. HEADER & EXPORT SUITE */
+.admin_rev_m_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin_rev_m_header_text h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+}
+.admin_rev_m_header_text h1 span {
+  color: #007acc;
+  font-weight: 300;
+}
+.admin_rev_m_header_text p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.admin_rev_m_export_suite {
+  display: flex;
+  gap: 10px;
+}
+.admin_rev_m_export_btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin_rev_m_export_btn:hover {
+  border-color: #007acc;
+  transform: translateY(-2px);
+}
+
+/* 3. REVENUE STAT TILES */
+.admin_rev_m_stats_bento {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin_rev_m_stat_card {
+  background: white;
+  padding: 12px 8px;
+  border-radius: 16px;
+  border: 1px solid #edf2f7;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.admin_rev_m_stat_card.admin_rev_m_primary {
+  background: linear-gradient(135deg, #007acc, #00d2ff);
+  color: white;
+  border: none;
+}
+
+.admin_rev_m_label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.6;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.admin_rev_m_value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.2;
+  color: #1e293b;
+}
+
+.admin_rev_m_primary .admin_rev_m_value,
+.admin_rev_m_primary .admin_rev_m_label {
+  color: white;
+}
+
+.admin_rev_m_pill_up {
+  font-size: 0.55rem;
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.admin_rev_m_pulse_ring {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 5px;
+  height: 5px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: admin_rev_m_pulse 2s infinite;
+}
+
+/* 4. BENTO GRID SYSTEM */
+.admin_rev_m_bento_row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+  margin-bottom: 25px;
+  align-items: stretch;
+}
+
+.admin_rev_m_bento_row:last-of-type {
+  grid-template-columns: 1fr 2fr;
+}
+
+.admin_rev_m_bento_item {
+  background: white;
+  border-radius: 28px;
+  padding: 30px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.admin_rev_m_card_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin_rev_m_title_with_toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 120px;
+}
+
+.admin_rev_m_card_head h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.admin_rev_m_filter_cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 1;
+}
+
+.admin_rev_m_mini_tabs {
+  background: #f1f5f9;
+  padding: 2px;
+  border-radius: 8px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.admin_rev_m_mini_tabs button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #64748b;
+  transition: 0.2s;
+}
+
+.admin_rev_m_mini_tabs button.admin_rev_m_active {
+  background: white;
+  color: #007acc;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.admin_rev_m_year_select {
+  border: 1px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  padding: 4px 6px;
+  font-size: 0.7rem;
+  color: #007acc;
+  font-weight: 800;
+  outline: none;
+  cursor: pointer;
+  height: 28px;
+  min-width: max-content;
+}
+
+/* 5. CHART WORKSPACES & LISTS */
+.admin_rev_m_canvas_holder {
+  height: 320px;
+  position: relative;
+  width: 100%;
+}
+.admin_rev_m_canvas_holder_compact {
+  flex: 1;
+  min-height: 280px;
+  position: relative;
+  width: 100%;
+}
+
+.admin_rev_m_doc_leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin_rev_m_list_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 18px;
+  transition: 0.3s;
+}
+
+.admin_rev_m_list_row:hover {
+  background: #e0f2fe;
+  border-left: 4px solid #007acc;
+  transform: translateX(5px);
+}
+.admin_rev_m_list_info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+.admin_rev_m_list_info span {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+.admin_rev_m_list_val {
+  font-weight: 900;
+  color: #007acc;
+  font-size: 1.1rem;
+}
+
+/* 6. PATIENT DEMOGRAPHICS */
+.admin_rev_m_patient_content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.admin_rev_m_doughnut_box {
+  height: 210px;
+  width: 210px;
+  position: relative;
+}
+
+.admin_rev_m_center_insight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.admin_rev_m_insight_val {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #007acc;
+  display: block;
+}
+.admin_rev_m_insight_label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.admin_rev_m_legend {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.admin_rev_m_legend_pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.admin_rev_m_pill_text {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.admin_rev_m_dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* 7. RESPONSIVE QUERIES */
+@media (min-width: 1025px) {
+  .admin_rev_m_stats_bento {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .admin_rev_m_stats_bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1150px) {
+  .admin_rev_m_wrapper {
+    zoom: 1;
+    padding: 20px;
+  }
+  .admin_rev_m_bento_row,
+  .admin_rev_m_bento_row:last-of-type {
+    grid-template-columns: 1fr;
+  }
+  .admin_rev_m_stats_bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .admin_rev_m_title_with_toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin_rev_m_stats_bento {
+    grid-template-columns: 1fr;
+  }
+  .admin_rev_m_export_suite {
+    display: none;
+  }
+}
+
+input[type="week"].admin_rev_m_year_select {
+  max-width: 130px;
+  font-size: 0.65rem;
+}
+
+.admin_rev_m_span_2 .admin_rev_m_year_select {
+  max-width: 100px;
+}
+/* ==========================================================================
+   RESPONSIVE LAYOUT ENGINE (Mobile-First Medico Standard)
+   ========================================================================== */
+
+@media screen and (max-width: 1400px) {
+  .adm_rev_m_wrapper {
+    zoom: 0.7;
+  }
+  .adm_rev_m_stats_bento {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .adm_rev_m_wrapper {
+    zoom: 1;
+    padding: 0 20px 20px;
+  }
+  .adm_rev_m_bento_row {
+    grid-template-columns: 1fr;
+  }
+  .adm_rev_m_bento_row:last-of-type {
+    grid-template-columns: 1fr;
+  }
+  .adm_rev_m_stats_bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .adm_rev_m_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .adm_rev_m_header_actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .adm_rev_m_global_search {
+    width: 100%;
+  }
+
+  .adm_rev_m_view_toggle_group,
+  .adm_rev_m_sync_btn_primary,
+  .adm_rev_m_add_btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .adm_rev_m_toolbar_row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .adm_rev_m_tab_group {
+    width: 100%;
+  }
+  .adm_rev_m_tab {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .adm_rev_m_stats_bento {
+    grid-template-columns: 1fr;
+  }
+
+  .adm_rev_m_modal_card {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .adm_rev_m_form_grid {
+    grid-template-columns: 1fr;
+  }
+  .adm_rev_m_form_actions {
+    flex-direction: column;
+  }
+  .adm_rev_m_form_actions button {
+    width: 100%;
+  }
+}

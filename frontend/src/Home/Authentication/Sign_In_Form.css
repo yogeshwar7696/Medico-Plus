@@ -1,0 +1,281 @@
+/* --- 1. LAYOUT & CONTAINER SECTIONS --- */
+.sign_in_form_wrapper {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.6s ease-in-out;
+    box-sizing: border-box;
+}
+
+.sign_in_panel {
+    left: 0;
+    z-index: 2;
+    opacity: 1;
+}
+
+.sign_in_link_wrapper {
+    text-decoration: none;
+}
+
+.sign_in_signup_panel {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* --- 2. PANEL SWITCHING LOGIC (DESKTOP) --- */
+.right-panel-active .sign_in_panel {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.right-panel-active .sign_in_signup_panel {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: sign_in_show_panel 0.6s;
+}
+
+@keyframes sign_in_show_panel {
+    0%, 49.99% { opacity: 0; z-index: 1; }
+    50%, 100% { opacity: 1; z-index: 5; }
+}
+
+/* --- 3. BRANDING & IDENTITY --- */
+.sign_in_brand_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 10px;
+}
+
+.sign_in_logo_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 32px;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.sign_in_portal_name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 0;
+}
+
+/* --- 4. FORM MAIN STRUCTURE --- */
+.sign_in_form_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sign_in_title {
+    font-weight: 700;
+    margin: 0 0 15px 0;
+    color: var(--text-main);
+    font-size: 26px;
+}
+
+.sign_in_divider_text {
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+/* --- 5. INPUT FIELDS & ICONS --- */
+.sign_in_input_group {
+    position: relative !important;
+    width: 90% !important;
+    margin-bottom: 15px !important;
+}
+
+.sign_in_input_group input {
+    width: 100% !important;
+    height: 45px !important;
+    padding: 0 12px 0 45px !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    font-size: 14px !important;
+    background-color: #f8fafc !important;
+    transition: all 0.3s ease !important;
+    box-sizing: border-box !important;
+}
+
+.sign_in_input_group input:focus {
+    outline: none !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+.sign_in_input_icon {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    opacity: 0.6;
+    display: flex;
+    align-items: center;
+}
+
+/* --- 6. CHECKBOX & TERMS --- */
+.sign_in_terms_check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.sign_in_terms_check span {
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- 7. BUTTONS & SOCIALS --- */
+.sign_in_social_container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.sign_in_google_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 45px;
+    width: 220px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.sign_in_google_btn:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-2px);
+}
+
+.sign_in_google_icon {
+    height: 20px;
+    width: 20px;
+}
+
+.sign_in_submit_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 60%;
+    border-radius: 12px;
+    border: none;
+    background: var(--grad-linear);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--primary-glow);
+    transition: transform 0.2s ease;
+}
+
+.sign_in_submit_btn:hover {
+    transform: translateY(-2px);
+}
+
+/* --- 8. FOOTER & MOBILE SWITCHER --- */
+.sign_in_footer_links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.sign_in_footer_link {
+    font-size: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.sign_in_mobile_switcher {
+    display: none;
+}
+
+/* --- 9. RESPONSIVE MEDIA QUERIES --- */
+@media (max-width: 550px) {
+    .sign_in_form_wrapper {
+        width: 100%;
+        position: relative;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .sign_in_panel {
+        display: block;
+        opacity: 1;
+    }
+
+    .right-panel-active .sign_in_panel {
+        display: none;
+    }
+
+    .sign_in_signup_panel {
+        display: none;
+        opacity: 1;
+        transform: none !important;
+    }
+
+    .right-panel-active .sign_in_signup_panel {
+        display: block;
+        transform: none !important;
+    }
+
+    .sign_in_mobile_switcher {
+        display: block;
+        margin-top: 15px;
+        font-size: 13px;
+        color: var(--text-main);
+    }
+
+    .sign_in_mobile_switcher span {
+        color: var(--primary);
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-left: 4px;
+    }
+
+    .sign_in_form_main {
+        padding: 0 20px;
+    }
+
+    .sign_in_submit_btn {
+        width: 80%;
+    }
+}

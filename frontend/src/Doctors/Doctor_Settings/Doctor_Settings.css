@@ -1,0 +1,183 @@
+:root {
+  --medico-primary: #007acc;
+  --medico-text: #1e293b;
+  --medico-muted: #64748b;
+  --medico-bg: #f8fafc;
+  --medico-card: #ffffff;
+  --medico-border: #e2e8f0;
+}
+
+.doc_set_wrapper {
+  background: var(--medico-bg);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: var(--medico-text);
+  box-sizing: border-box;
+  zoom: 0.8;
+}
+
+/* Header & Nav Row */
+.doc_set_header {
+  margin-bottom: 40px;
+}
+
+.doc_set_header h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+}
+.doc_set_header h1 span {
+  color: var(--medico-primary);
+}
+
+.doc_set_nav_row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.doc_set_nav_row button {
+  padding: 10px 24px;
+  border-radius: 20px;
+  border: 1px solid var(--medico-border);
+  background: var(--medico-card);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.doc_set_nav_row button.active {
+  background: var(--medico-primary);
+  color: white;
+  border-color: var(--medico-primary);
+}
+
+/* Content Area */
+.doc_set_content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.doc_set_card {
+  background: var(--medico-card);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--medico-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Form Layout */
+.doc_set_flex_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.doc_set_input_group h3,
+.doc_set_upload_group h3 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid var(--medico-border);
+  background: #fcfcfd;
+  font-family: inherit;
+  resize: none;
+  box-sizing: border-box;
+}
+
+/* Upload Styling */
+.doc_set_upload_zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--medico-border);
+  padding: 30px;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #fcfcfd;
+  text-align: center;
+}
+.doc_set_upload_zone svg {
+  font-size: 2rem;
+  color: var(--medico-primary);
+  margin-bottom: 10px;
+}
+
+/* Export Styling */
+.doc_set_export_item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid var(--medico-border);
+  border-radius: 16px;
+}
+
+.doc_set_icon_wrap {
+  background: #e0f2fe;
+  color: var(--medico-primary);
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 1.5rem;
+}
+
+.doc_set_btn_download {
+  margin-left: auto;
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: var(--medico-primary);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Actions */
+.doc_set_action_row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.doc_set_btn_primary {
+  background: var(--medico-primary);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .doc_set_flex_container {
+    grid-template-columns: 1fr; /* Stack Bio and Signature */
+  }
+
+  .doc_set_nav_row {
+    flex-direction: column;
+  }
+
+  .doc_set_export_item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doc_set_btn_download {
+    width: 100%;
+    margin-left: 0;
+  }
+}

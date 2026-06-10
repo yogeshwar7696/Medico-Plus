@@ -1,0 +1,603 @@
+/* --- Dashboard Layout & Animations --- */
+.adm_dash__dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  gap: 15px;
+  padding: 0;
+  background: transparent;
+  min-height: 100vh;
+  box-sizing: border-box;
+  animation: adm_dash__fadeIn 0.6s ease-in-out;
+  will-change: transform;
+  transform: translateZ(0);
+  overflow: hidden;
+  zoom: 0.75;
+}
+
+.adm_dash__dashboard-container::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes adm_dash__fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Top Section Structure --- */
+.adm_dash__top-section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 15px;
+}
+
+.adm_dash__left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 0;
+}
+
+/* --- Metric Counter Cards --- */
+.adm_dash__stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: auto;
+}
+
+.adm_dash__stat-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease;
+  width: auto;
+}
+
+.adm_dash__stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.adm_dash__stat-card h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.adm_dash__stat-card p {
+  font-size: 26px;
+  font-weight: 800;
+  color: #007acc;
+  margin: 0;
+}
+
+/* --- Chart Grid and Cards --- */
+.adm_dash__charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  min-width: 0;
+}
+
+.adm_dash__chart-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  contain: content;
+  overflow: hidden;
+  width: 100%;
+}
+
+.adm_dash__chart-header-ui {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.adm_dash__chart-header-ui h3 {
+  font-size: 13px;
+  color: #1e293b;
+  font-weight: 700;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.adm_dash__inline-tag {
+  font-size: 9px;
+  font-weight: 700;
+  color: #007acc;
+  background: #f0f7ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 122, 204, 0.1);
+}
+
+.adm_dash__view-btn {
+  background: #f1f5f9;
+  border: none;
+  color: #007acc;
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.adm_dash__view-btn:hover {
+  background: #e2e8f0;
+}
+
+.adm_dash__chart-wrap {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* --- Pie Chart Visualization --- */
+.adm_dash__chart-wrap-pie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 20px;
+  padding: 5px 0;
+}
+
+.adm_dash__pie-container {
+  flex: 1;
+  height: 140px;
+  max-width: 140px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.05));
+}
+
+.adm_dash__pie-legend-slim {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.adm_dash__legend-item-compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid #f1f5f9;
+  transition: 0.2s ease;
+}
+
+.adm_dash__legend-item-compact:last-child {
+  border-bottom: none;
+}
+
+.adm_dash__legend-item-compact:hover {
+  border-bottom-color: #007acc;
+  transform: translateX(3px);
+}
+
+.adm_dash__dot-mini {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.adm_dash__txt-mini {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-transform: capitalize;
+}
+
+.adm_dash__txt-mini strong {
+  color: #1e293b;
+  font-weight: 800;
+  background: #f8fafc;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+/* --- Calendar and Time Display --- */
+.adm_dash__calendar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.adm_dash__widget-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+  margin-bottom: 15px;
+  color: #007acc;
+}
+
+.adm_dash__live-time-group {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.adm_dash__live-time {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.5px;
+}
+
+.adm_dash__live-date-single-line {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.adm_dash__full-date-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.adm_dash__cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+
+.adm_dash__cal-day-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.adm_dash__cal-date {
+  font-size: 0.75rem;
+  padding: 6px;
+  border-radius: 6px;
+  color: #475569;
+}
+
+.adm_dash__cal-date.adm_dash__current {
+  background: #007acc;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.2);
+}
+
+/* --- Events Sidebar Section --- */
+.adm_dash__events-section {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 10px;
+  height: 310px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.adm_dash__events-section .adm_dash__modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.adm_dash__events-section .adm_dash__header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm_dash__events-section h3 {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 800;
+  margin: 0;
+}
+
+.adm_dash__events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.adm_dash__event-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.adm_dash__event-card:hover {
+  transform: translateX(5px);
+  background: #ffffff;
+  border-color: #007acc;
+  box-shadow: 0 6px 15px rgba(0, 122, 204, 0.08);
+}
+
+.adm_dash__event-date-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  height: 45px;
+  background: #007acc;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.adm_dash__event-date-badge span:first-child {
+  font-size: 16px;
+}
+
+.adm_dash__event-date-badge span:last-child {
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.adm_dash__event-card.adm_dash__blue .adm_dash__event-date-badge {
+  background: #36a2eb;
+}
+
+.adm_dash__event-card.adm_dash__pink .adm_dash__event-date-badge {
+  background: #ff6384;
+}
+
+.adm_dash__event-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.adm_dash__event-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.adm_dash__event-time {
+  font-size: 11px;
+  font-weight: 500;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* --- Status and Feed Section --- */
+.adm_dash__bottom-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+  padding-bottom: 40px;
+}
+
+.adm_dash__info-card-modern {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.adm_dash__modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.adm_dash__header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm_dash__header-info h3 {
+  font-size: 14px;
+  color: #1e293b;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* --- Status List Items --- */
+.adm_dash__modern-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.adm_dash__modern-item-card {
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.adm_dash__modern-item-card:hover {
+  transform: translateX(8px);
+  border-color: #007acc;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.05);
+}
+
+.adm_dash__item-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.adm_dash__item-avatar {
+  width: 36px;
+  height: 36px;
+  background: #e2e8f0;
+  color: #64748b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm_dash__item-avatar.adm_dash__blue {
+  background: #f0f7ff;
+  color: #007acc;
+}
+
+.adm_dash__item-details strong {
+  display: block;
+  font-size: 13px;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.adm_dash__item-details span {
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* --- Badges and Buttons --- */
+.adm_dash__modern-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.adm_dash__bg-green {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.adm_dash__bg-red {
+  background: #fef2f2;
+  color: #ef4444;
+}
+
+.adm_dash__modern-time-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #007acc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+
+.adm_dash__text-btn {
+  background: none;
+  border: none;
+  color: #007acc;
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+
+.adm_dash__text-btn:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1200px) {
+  .adm_dash__dashboard-container {
+    zoom: 1;
+    padding: 15px;
+  }
+  .adm_dash__top-section,
+  .adm_dash__bottom-section,
+  .adm_dash__charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .adm_dash__stats-cards {
+    grid-template-columns: 1fr;
+  }
+  .adm_dash__chart-wrap-pie {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .adm_dash__events-section {
+    height: fit-content;
+  }
+  .adm_dash__pie-container {
+    max-width: 180px;
+    height: 180px;
+  }
+}
+.admin_dashboard_item-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: #f0f7ff;
+  border: 1px solid #cbd5e1;
+}
+
+.admin_dashboard_doc_avatar_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

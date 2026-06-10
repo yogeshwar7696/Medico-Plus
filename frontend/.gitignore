@@ -1,0 +1,33 @@
+# ==========================================================================
+# SYSTEM & ENVIRONMENT EXCLUSIONS
+# ==========================================================================
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node / Build Outputs
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor Directories and Files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+Medico/backend/.env
+
+Medico/backend/uploads/
+backend/uploads/vault/

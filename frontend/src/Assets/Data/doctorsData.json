@@ -1,0 +1,890 @@
+{
+    "doctorDetails" :{  
+        "firstName":"Arvind",
+        "lastName":"Rao",
+        "qualification":"Qualification: MBBS, MD (General Medicine)",
+        "email": "dr.arvind.rao@example.com",
+        "phone": "+91-9876543210",
+        "address": "123 Medical Center, Chennai, Tamil Nadu",
+        "specialization": "General Medicine",
+        "experience": "15 years",
+        "licenseNumber": "TNMC123456",
+        "workingHours": "9:00 AM - 5:00 PM"
+    },
+   
+  "patientDetails": [
+    {
+      "patientId": "PAT000000011",
+      "name": "Rahul Sharma",
+      "age": 29,
+      "email": "rahul.s@example.com",
+      "phoneNumber": "9876901234",
+      "emergencyNumber": "9123345678",
+      "gender": "Male",
+      "address": "12 Sunrise St, Chennai",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "09:00 AM",
+      "reasonForVisit": "Routine Checkup",
+      "Past_Data": {
+        "dateOfVisit": "2025-12-15",
+        "prescription": ["Paracetamol 500mg - twice daily"],
+        "doctorDetails": {
+          "name": "Dr. Suresh Menon",
+          "specialization": "General Physician",
+          "contact": "dr.suresh@example.com"
+        },
+        "scansAndTests": ["Blood Test - Normal"],
+        "nextVisit": "2026-03-25",
+        "remarks": "Patient recovering well"
+      }
+    },
+    {
+      "patientId": "PAT000000012",
+      "name": "Divya Menon",
+      "age": 34,
+      "email": "divya.m@example.com",
+      "phoneNumber": "9876012345",
+      "emergencyNumber": "9123456789",
+      "gender": "Female",
+      "address": "45 Lotus St, Bangalore",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "09:15 AM",
+      "reasonForVisit": "Diabetes Follow-up",
+      "Past_Data": {
+        "dateOfVisit": "2025-11-20",
+        "prescription": ["Metformin 500mg - twice daily"],
+        "doctorDetails": {
+          "name": "Dr. Kavitha Rao",
+          "specialization": "Endocrinologist",
+          "contact": "dr.kavitha@example.com"
+        },
+        "scansAndTests": ["Blood Sugar Test - High"],
+        "nextVisit": "2026-03-26",
+        "remarks": "Monitor sugar levels"
+      }
+    },
+    {
+      "patientId": "PAT000000013",
+      "name": "Sanjay Gupta",
+      "age": 40,
+      "email": "sanjay.g@example.com",
+      "phoneNumber": "9876123456",
+      "emergencyNumber": "9123567890",
+      "gender": "Male",
+      "address": "78 Green Park, Delhi",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "09:30 AM",
+      "reasonForVisit": "Chest Pain Consultation",
+      "Past_Data": {
+        "dateOfVisit": "2025-10-05",
+        "prescription": ["Aspirin 75mg - once daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Cardiologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["ECG - Mild abnormality"],
+        "nextVisit": "2026-03-27",
+        "remarks": "Requires further monitoring"
+      }
+    },
+    {
+      "patientId": "PAT000000014",
+      "name": "Anita Reddy",
+      "age": 31,
+      "email": "anita.r@example.com",
+      "phoneNumber": "9876234567",
+      "emergencyNumber": "9123678901",
+      "gender": "Female",
+      "address": "23 Lotus Ave, Mumbai",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "09:45 AM",
+      "reasonForVisit": "Fever and Cold",
+      "Past_Data": {
+        "dateOfVisit": "2025-09-12",
+        "prescription": ["Antibiotics - 5 days course"],
+        "doctorDetails": {
+          "name": "Dr. Manoj Pillai",
+          "specialization": "ENT Specialist",
+          "contact": "dr.manoj@example.com"
+        },
+        "scansAndTests": ["Throat Swab Test - Negative"],
+        "nextVisit": "2026-03-28",
+        "remarks": "Condition improved"
+      }
+    },
+    {
+      "patientId": "PAT000000017",
+      "name": "Karthik Raj",
+      "age": 31,
+      "email": "karthik.r@example.com",
+      "phoneNumber": "9876567890",
+      "emergencyNumber": "9123901234",
+      "gender": "Male",
+      "address": "89 Green Rd, Hyderabad",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "10:00 AM",
+      "reasonForVisit": "ENT Follow-up",
+      "Past_Data": {
+        "dateOfVisit": "2025-06-18",
+        "prescription": ["Antibiotics - 5 days course"],
+        "doctorDetails": {
+          "name": "Dr. Manoj Pillai",
+          "specialization": "ENT Specialist",
+          "contact": "dr.manoj@example.com"
+        },
+        "scansAndTests": ["Throat Swab Test - Positive"],
+        "nextVisit": "2026-03-31",
+        "remarks": "Condition improved"
+      }
+    },
+    {
+      "patientId": "PAT000000021",
+      "name": "Arvind Kumar",
+      "age": 33,
+      "email": "arvind.k@example.com",
+      "phoneNumber": "9876905678",
+      "emergencyNumber": "9123456789",
+      "gender": "Male",
+      "address": "12 MG Road, Chennai",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "10:15 AM",
+      "reasonForVisit": "Routine Checkup"
+    },
+    {
+      "patientId": "PAT000000027",
+      "name": "Karthik Srinivasan",
+      "age": 32,
+      "email": "karthik.s@example.com",
+      "phoneNumber": "9876567890",
+      "emergencyNumber": "9123901234",
+      "gender": "Male",
+      "address": "89 Green Rd, Hyderabad",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "10:30 AM",
+      "reasonForVisit": "Routine Checkup"
+    },
+    {
+      "patientId": "PAT000000018",
+      "name": "Neha Verma",
+      "age": 24,
+      "email": "neha.v@example.com",
+      "phoneNumber": "9876678901",
+      "emergencyNumber": "9123012345",
+      "gender": "Female",
+      "address": "67 Lake View, Jaipur",
+      "isCompleted": true,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "10:45 AM",
+      "reasonForVisit": "Skin Rash",
+      "Past_Data": {
+        "dateOfVisit": "2025-05-22",
+        "prescription": ["Topical Cream - twice daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Dermatologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["Skin Allergy Test - Positive"],
+        "nextVisit": "2026-03-20",
+        "remarks": "Requires follow-up"
+      }
+    },
+    {
+      "patientId": "PAT000000025",
+      "name": "Vikram Rao",
+      "age": 37,
+      "email": "vikram.r@example.com",
+      "phoneNumber": "9876345678",
+      "emergencyNumber": "9123789012",
+      "gender": "Male",
+      "address": "56 Park Lane, Delhi",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "11:00 AM",
+      "reasonForVisit": "Chest Pain Consultation"
+    },
+    {
+      "patientId": "PAT000000023",
+      "name": "Ramesh Bhat",
+      "age": 42,
+      "email": "ramesh.b@example.com",
+      "phoneNumber": "9876123456",
+      "emergencyNumber": "9123567890",
+      "gender": "Male",
+      "address": "78 Gandhi St, Bangalore",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "11:15 AM",
+      "reasonForVisit": "Diabetes Follow-up"
+    },
+    {
+      "patientId": "PAT000000024",
+      "name": "Sneha Iyer",
+      "age": 30,
+      "email": "sneha.i@example.com",
+      "phoneNumber": "9876234567",
+      "emergencyNumber": "9123678901",
+      "gender": "Female",
+      "address": "23 Lotus Ave, Mumbai",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "11:30 AM",
+      "reasonForVisit": "Blood Pressure Check",
+      "Past_Data": {
+        "dateOfVisit": "2025-11-15",
+        "prescription": ["BP Medication - once daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Cardiologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["ECG - Normal"],
+        "nextVisit": "2026-03-13",
+        "remarks": "Monitor BP regularly"
+      }
+    },
+    {
+      "patientId": "PAT000000022",
+      "name": "Priya Nair",
+      "age": 28,
+      "email": "priya.n@example.com",
+      "phoneNumber": "9876012345",
+      "emergencyNumber": "9123409876",
+      "gender": "Female",
+      "address": "45 Anna Nagar, Chennai",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "01:30 PM",
+      "reasonForVisit": "Fever and Cold",
+      "Past_Data": {
+        "dateOfVisit": "2025-12-05",
+        "prescription": ["Antibiotics - 5 days course"],
+        "doctorDetails": {
+          "name": "Dr. Manoj Pillai",
+          "specialization": "ENT Specialist",
+          "contact": "dr.manoj@example.com"
+        },
+        "scansAndTests": ["Throat Swab Test - Negative"],
+        "nextVisit": "2026-03-11",
+        "remarks": "Condition improved"
+      }
+    },
+    {
+      "patientId": "PAT000000026",
+      "name": "Anjali Desai",
+      "age": 26,
+      "email": "anjali.d@example.com",
+      "phoneNumber": "9876456789",
+      "emergencyNumber": "9123890123",
+      "gender": "Female",
+      "address": "34 Rose St, Pune",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "01:45 PM",
+      "reasonForVisit": "Migraine",
+      "Past_Data": {
+        "dateOfVisit": "2025-09-20",
+        "prescription": ["Painkillers - as needed"],
+        "doctorDetails": {
+          "name": "Dr. Rekha Sen",
+          "specialization": "Neurologist",
+          "contact": "dr.rekha@example.com"
+        },
+        "scansAndTests": ["CT Scan - Head"],
+        "nextVisit": "2026-03-15",
+        "remarks": "Observation required"
+      }
+    },
+    {
+      "patientId": "PAT000000028",
+      "name": "Neha Joshi",
+      "age": 24,
+      "email": "neha.j@example.com",
+      "phoneNumber": "9876678901",
+      "emergencyNumber": "9123012345",
+      "gender": "Female",
+      "address": "67 Lake View, Jaipur",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-17",
+      "timeSlot": "01:00 PM",
+      "reasonForVisit": "Skin Rash",
+      "Past_Data": {
+        "dateOfVisit": "2025-08-25",
+        "prescription": ["Topical Cream - twice daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Dermatologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["Skin Allergy Test - Positive"],
+        "nextVisit": "2026-03-17",
+        "remarks": "Requires follow-up"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000029",
+      "name": "Rohit Mehta",
+      "age": 30,
+      "email": "rohit.m@example.com",
+      "phoneNumber": "9876789012",
+      "emergencyNumber": "9123123456",
+      "gender": "Male",
+      "address": "21 Hilltop, Kolkata",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-18",
+      "timeSlot": "11:00 AM",
+      "reasonForVisit": "Dental Pain"
+    },
+ 
+    {
+      "patientId": "PAT000000030",
+      "name": "Meera Pillai",
+      "age": 26,
+      "email": "meera.p@example.com",
+      "phoneNumber": "9876890123",
+      "emergencyNumber": "9123234567",
+      "gender": "Female",
+      "address": "54 Palm St, Kochi",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-19",
+      "timeSlot": "03:30 PM",
+      "reasonForVisit": "Follow-up Consultation",
+      "Past_Data": {
+        "dateOfVisit": "2025-07-30",
+        "prescription": ["Vitamin Supplements"],
+        "doctorDetails": {
+          "name": "Dr. Suresh Menon",
+          "specialization": "General Physician",
+          "contact": "dr.suresh@example.com"
+        },
+        "scansAndTests": ["Blood Test - Normal"],
+        "nextVisit": "2026-03-29",
+        "remarks": "Patient recovering well"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000031",
+      "name": "Ajay Kumar",
+      "age": 29,
+      "email": "ajay.k@example.com",
+      "phoneNumber": "9876901111",
+      "emergencyNumber": "9123451111",
+      "gender": "Male",
+      "address": "12 MG Road, Chennai",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-20",
+      "timeSlot": "11:00 AM",
+      "reasonForVisit": "Routine Checkup"
+    },
+ 
+    {
+      "patientId": "PAT000000032",
+      "name": "Shreya Patel",
+      "age": 27,
+      "email": "shreya.p@example.com",
+      "phoneNumber": "9876902222",
+      "emergencyNumber": "9123452222",
+      "gender": "Female",
+      "address": "45 Lotus St, Bangalore",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-21",
+      "timeSlot": "03:30 PM",
+      "reasonForVisit": "Fever and Cold",
+      "Past_Data": {
+        "dateOfVisit": "2025-12-10",
+        "prescription": ["Antibiotics - 5 days course"],
+        "doctorDetails": {
+          "name": "Dr. Manoj Pillai",
+          "specialization": "ENT Specialist",
+          "contact": "dr.manoj@example.com"
+        },
+        "scansAndTests": ["Throat Swab Test - Negative"],
+        "nextVisit": "2026-03-21",
+        "remarks": "Condition improved"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000033",
+      "name": "Ravi Singh",
+      "age": 35,
+      "email": "ravi.s@example.com",
+      "phoneNumber": "9876903333",
+      "emergencyNumber": "9123453333",
+      "gender": "Male",
+      "address": "78 Gandhi St, Delhi",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-22",
+      "timeSlot": "09:00 AM",
+      "reasonForVisit": "Diabetes Follow-up"
+    },
+ 
+    {
+      "patientId": "PAT000000034",
+      "name": "Meena Iyer",
+      "age": 31,
+      "email": "meena.i@example.com",
+      "phoneNumber": "9876904444",
+      "emergencyNumber": "9123454444",
+      "gender": "Female",
+      "address": "23 Lotus Ave, Mumbai",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-23",
+      "timeSlot": "02:00 PM",
+      "reasonForVisit": "Blood Pressure Check",
+      "Past_Data": {
+        "dateOfVisit": "2025-11-05",
+        "prescription": ["BP Medication - once daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Cardiologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["ECG - Normal"],
+        "nextVisit": "2026-03-23",
+        "remarks": "Monitor BP regularly"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000035",
+      "name": "Vikas Rao",
+      "age": 37,
+      "email": "vikas.r@example.com",
+      "phoneNumber": "9876905555",
+      "emergencyNumber": "9123455555",
+      "gender": "Male",
+      "address": "56 Park Lane, Delhi",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-24",
+      "timeSlot": "11:30 AM",
+      "reasonForVisit": "Chest Pain Consultation"
+    },
+ 
+    {
+      "patientId": "PAT000000036",
+      "name": "Anjali Sharma",
+      "age": 26,
+      "email": "anjali.s@example.com",
+      "phoneNumber": "9876906666",
+      "emergencyNumber": "9123456666",
+      "gender": "Female",
+      "address": "34 Rose St, Pune",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-25",
+      "timeSlot": "04:00 PM",
+      "reasonForVisit": "Migraine",
+      "Past_Data": {
+        "dateOfVisit": "2025-09-25",
+        "prescription": ["Painkillers - as needed"],
+        "doctorDetails": {
+          "name": "Dr. Rekha Sen",
+          "specialization": "Neurologist",
+          "contact": "dr.rekha@example.com"
+        },
+        "scansAndTests": ["CT Scan - Head"],
+        "nextVisit": "2026-03-25",
+        "remarks": "Observation required"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000037",
+      "name": "Kiran Raj",
+      "age": 32,
+      "email": "kiran.r@example.com",
+      "phoneNumber": "9876907777",
+      "emergencyNumber": "9123457777",
+      "gender": "Male",
+      "address": "89 Green Rd, Hyderabad",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-26",
+      "timeSlot": "10:00 AM",
+      "reasonForVisit": "Routine Checkup"
+    },
+ 
+    {
+      "patientId": "PAT000000038",
+      "name": "Neha Kapoor",
+      "age": 24,
+      "email": "neha.k@example.com",
+      "phoneNumber": "9876908888",
+      "emergencyNumber": "9123458888",
+      "gender": "Female",
+      "address": "67 Lake View, Jaipur",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-27",
+      "timeSlot": "01:00 PM",
+      "reasonForVisit": "Skin Rash",
+      "Past_Data": {
+        "dateOfVisit": "2025-08-15",
+        "prescription": ["Topical Cream - twice daily"],
+        "doctorDetails": {
+          "name": "Dr. Anita Sharma",
+          "specialization": "Dermatologist",
+          "contact": "dr.anita@example.com"
+        },
+        "scansAndTests": ["Skin Allergy Test - Positive"],
+        "nextVisit": "2026-03-27",
+        "remarks": "Requires follow-up"
+      }
+    },
+ 
+    {
+      "patientId": "PAT000000039",
+      "name": "Rohan Das",
+      "age": 30,
+      "email": "rohan.d@example.com",
+      "phoneNumber": "9876909999",
+      "emergencyNumber": "9123459999",
+      "gender": "Male",
+      "address": "21 Hilltop, Kolkata",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-28",
+      "timeSlot": "11:00 AM",
+      "reasonForVisit": "Dental Pain"
+    },
+ 
+    {
+      "patientId": "PAT000000040",
+      "name": "Meera Nair",
+      "age": 26,
+      "email": "meera.n@example.com",
+      "phoneNumber": "9876910000",
+      "emergencyNumber": "9123460000",
+      "gender": "Female",
+      "address": "54 Palm St, Kochi",
+      "isCompleted": false,
+      "appointmentDate": "2026-03-29",
+      "timeSlot": "03:30 PM",
+      "reasonForVisit": "Follow-up Consultation",
+      "Past_Data": {
+        "dateOfVisit": "2025-07-20",
+        "prescription": ["Vitamin Supplements"],
+        "doctorDetails": {
+          "name": "Dr. Suresh Menon",
+          "specialization": "General Physician",
+          "contact": "dr.suresh@example.com"
+        },
+        "scansAndTests": ["Blood Test - Normal"],
+        "nextVisit": "2026-03-29",
+        "remarks": "Patient recovering well"
+      }
+    }
+  ],
+  "reviews": [
+  {
+    "id": "RVW-201",
+    "patient": "Rahul Sharma",
+    "rating": 5,
+    "title": "Thorough and friendly",
+    "comment": "Clear explanation and practical advice. Felt confident after the visit.",
+    "date": "2026-03-25T18:10:00+05:30",
+    "visitId": "PAT000000011",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Thanks Rahul. Please continue the routine and revert if symptoms change.",
+      "date": "2026-03-25T19:00:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-202",
+    "patient": "Divya Menon",
+    "rating": 4,
+    "title": "Good diabetes counsel",
+    "comment": "Diet plan and dosage were clear. Waiting time could be shorter.",
+    "date": "2026-03-26T18:15:00+05:30",
+    "visitId": "PAT000000012",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-203",
+    "patient": "Sanjay Gupta",
+    "rating": 4,
+    "title": "Reassuring consultation",
+    "comment": "Doctor was calm, reviewed ECG, and explained next steps.",
+    "date": "2026-03-27T18:20:00+05:30",
+    "visitId": "PAT000000013",
+    "status": "resolved",
+    "public": true,
+    "reply": {
+      "text": "Happy to help, Sanjay. Please follow the monitoring plan.",
+      "date": "2026-03-27T19:05:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-204",
+    "patient": "Anita Reddy",
+    "rating": 3,
+    "title": "Treatment worked",
+    "comment": "Fever subsided in two days. Had ~20 min waiting.",
+    "date": "2026-03-28T17:50:00+05:30",
+    "visitId": "PAT000000014",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-205",
+    "patient": "Vivek Nair",
+    "rating": 5,
+    "title": "BP under control",
+    "comment": "Medication adjustment helped. Thank you!",
+    "date": "2026-03-29T18:05:00+05:30",
+    "visitId": "PAT000000015",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Great to hear, Vivek. Keep the BP log and share next visit.",
+      "date": "2026-03-29T18:45:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-206",
+    "patient": "Sneha Kapoor",
+    "rating": 4,
+    "title": "Migraine plan helped",
+    "comment": "Frequency reduced after following the plan for two weeks.",
+    "date": "2026-03-30T18:12:00+05:30",
+    "visitId": "PAT000000016",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-207",
+    "patient": "Karthik Raj",
+    "rating": 4,
+    "title": "Clear follow-up",
+    "comment": "Follow-up for ENT was explained well. Thanks.",
+    "date": "2026-03-31T18:10:00+05:30",
+    "visitId": "PAT000000017",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Thanks Karthik. Continue saline gargles and meds as advised.",
+      "date": "2026-03-31T18:50:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-208",
+    "patient": "Neha Verma",
+    "rating": 2,
+    "title": "Delay in consultation",
+    "comment": "Checkup was fine but had to wait longer than expected.",
+    "date": "2026-03-20T18:00:00+05:30",
+    "visitId": "PAT000000018",
+    "status": "flagged",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-209",
+    "patient": "Arvind Kumar",
+    "rating": 5,
+    "title": "Quick routine check",
+    "comment": "Smooth experience and clear lifestyle tips.",
+    "date": "2026-03-10T18:05:00+05:30",
+    "visitId": "PAT000000021",
+    "status": "resolved",
+    "public": true,
+    "reply": {
+      "text": "Glad it was helpful. Keep up with the routine, Arvind.",
+      "date": "2026-03-10T18:45:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-210",
+    "patient": "Priya Nair",
+    "rating": 4,
+    "title": "Fever cured",
+    "comment": "Felt better in two days. Thanks!",
+    "date": "2026-03-11T18:20:00+05:30",
+    "visitId": "PAT000000022",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Wishing you good health, Priya. Stay hydrated.",
+      "date": "2026-03-11T19:00:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-211",
+    "patient": "Ramesh Bhat",
+    "rating": 3,
+    "title": "Follow-up okay",
+    "comment": "Advice was fine. Would prefer earlier morning slots.",
+    "date": "2026-03-12T18:10:00+05:30",
+    "visitId": "PAT000000023",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-212",
+    "patient": "Sneha Iyer",
+    "rating": 4,
+    "title": "Helpful BP guidance",
+    "comment": "Tracking sheet and meds were well explained.",
+    "date": "2026-03-23T18:30:00+05:30",
+    "visitId": "PAT000000024",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Thanks Sneha. Please share readings after one week.",
+      "date": "2026-03-23T19:10:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-213",
+    "patient": "Vikram Rao",
+    "rating": 3,
+    "title": "Clarified concerns",
+    "comment": "Chest discomfort addressed. Suggested tests scheduled.",
+    "date": "2026-03-14T18:00:00+05:30",
+    "visitId": "PAT000000025",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-214",
+    "patient": "Anjali Desai",
+    "rating": 4,
+    "title": "Migraine improving",
+    "comment": "Frequency reduced. Thanks for the plan.",
+    "date": "2026-03-15T18:05:00+05:30",
+    "visitId": "PAT000000026",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-215",
+    "patient": "Karthik Srinivasan",
+    "rating": 5,
+    "title": "Very smooth checkup",
+    "comment": "Quick visit and helpful guidance.",
+    "date": "2026-03-16T18:05:00+05:30",
+    "visitId": "PAT000000027",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Appreciate it, Karthik. See you on your next routine.",
+      "date": "2026-03-16T18:45:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-216",
+    "patient": "Neha Joshi",
+    "rating": 4,
+    "title": "Skin issue improved",
+    "comment": "Topical routine helped a lot.",
+    "date": "2026-03-17T18:25:00+05:30",
+    "visitId": "PAT000000028",
+    "status": "resolved",
+    "public": true,
+    "reply": {
+      "text": "Great to hear, Neha. Continue the routine for 1 more week.",
+      "date": "2026-03-17T19:00:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-217",
+    "patient": "Rohit Mehta",
+    "rating": 3,
+    "title": "Referred for dental",
+    "comment": "Got a good referral. Thanks.",
+    "date": "2026-03-18T18:12:00+05:30",
+    "visitId": "PAT000000029",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-218",
+    "patient": "Meera Pillai",
+    "rating": 5,
+    "title": "Excellent follow-up",
+    "comment": "Very satisfied with the clarity and care.",
+    "date": "2026-03-19T18:30:00+05:30",
+    "visitId": "PAT000000030",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Thank you, Meera. Continue supplements as advised.",
+      "date": "2026-03-19T19:10:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-219",
+    "patient": "Ajay Kumar",
+    "rating": 5,
+    "title": "Quick and clear",
+    "comment": "Routine visit was efficient.",
+    "date": "2026-03-20T18:00:00+05:30",
+    "visitId": "PAT000000031",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-220",
+    "patient": "Shreya Patel",
+    "rating": 4,
+    "title": "Fever care",
+    "comment": "Recovered quickly with the medicines.",
+    "date": "2026-03-21T18:05:00+05:30",
+    "visitId": "PAT000000032",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Glad you’re better, Shreya. Rest well.",
+      "date": "2026-03-21T18:45:00+05:30"
+    }
+  },
+  {
+    "id": "RVW-221",
+    "patient": "Ravi Singh",
+    "rating": 4,
+    "title": "Diabetes advice",
+    "comment": "Diet chart and targets were clear.",
+    "date": "2026-03-22T18:20:00+05:30",
+    "visitId": "PAT000000033",
+    "status": "new",
+    "public": true,
+    "reply": null
+  },
+  {
+    "id": "RVW-222",
+    "patient": "Meena Iyer",
+    "rating": 5,
+    "title": "BP check was smooth",
+    "comment": "Appreciate the clarity on readings.",
+    "date": "2026-03-23T18:40:00+05:30",
+    "visitId": "PAT000000034",
+    "status": "replied",
+    "public": true,
+    "reply": {
+      "text": "Thanks Meena. Keep tracking and share the log next visit.",
+      "date": "2026-03-23T19:20:00+05:30"
+    }
+  }
+]
+}
+ 
+ 
+ 

@@ -1,0 +1,463 @@
+/* 1. GLOBAL FOUNDATIONS */
+.doc_prof_m_root {
+  padding: 20px 40px;
+  background: #f8fbff;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  zoom: 0.9;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@keyframes doc_prof_m_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.doc_prof_m_fade_in {
+  animation: doc_prof_m_fadeIn 0.5s ease-out forwards;
+}
+
+/* 2. GRID ARCHITECTURE */
+.doc_prof_m_grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* 3. CARD & HEADER STYLING */
+.doc_prof_m_card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.doc_prof_m_card_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 25px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafbfc;
+}
+
+.doc_prof_m_card_header h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.doc_prof_m_icon {
+  color: #007acc;
+  font-size: 1.1rem;
+}
+
+/* 4. SIDEBAR IDENTITY MODULE */
+.doc_prof_m_identity {
+  text-align: center;
+  padding: 30px 25px;
+}
+
+.doc_prof_m_avatar_wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.doc_prof_m_img {
+  width: 155px;
+  height: 155px;
+  border-radius: 35px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 10px 25px rgba(0, 122, 204, 0.1);
+}
+
+.doc_prof_m_status {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+.doc_prof_m_status.available {
+  background: #10b981;
+}
+.doc_prof_m_status.busy {
+  background: #f43f5e;
+}
+
+.doc_prof_m_id_text h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 5px 0;
+}
+
+.doc_prof_m_qual {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #007acc;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+}
+
+.doc_prof_m_dept_tag {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* 5. STATS STRIP */
+.doc_prof_m_stats_row {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  margin: 20px 0;
+  background: #f8fafc;
+  border-radius: 15px;
+}
+
+.doc_prof_m_stat_node label {
+  display: block;
+  font-size: 0.6rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.doc_prof_m_stat_node strong {
+  font-size: 1.2rem;
+  color: #1e293b;
+  font-weight: 800;
+}
+
+/* 6. CONTENT & FORM FIELDS */
+.doc_prof_m_content {
+  padding: 25px;
+}
+
+.doc_prof_m_bio_text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+.doc_prof_m_textarea {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  resize: none;
+}
+
+.doc_prof_m_details_grid {
+  display: grid;
+  grid-template-columns: 0.8fr 0.8fr;
+  gap: 15px;
+}
+
+.doc_prof_m_info_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 20px;
+}
+
+.doc_prof_m_form {
+  padding: 20px;
+}
+
+.doc_prof_m_field {
+  margin-bottom: 15px;
+}
+
+.doc_prof_m_field label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #94a3b8;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.doc_prof_m_field p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.doc_prof_m_status_text.available {
+  color: #10b981;
+}
+.doc_prof_m_status_text.busy {
+  color: #f43f5e;
+}
+
+.doc_prof_m_readonly {
+  color: #007acc;
+  font-weight: 800;
+}
+
+/* 7. ACTION BUTTONS */
+.doc_prof_m_btn_group {
+  display: flex;
+  gap: 0px;
+  justify-content: space-evenly;
+}
+
+.doc_prof_m_btn_primary {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.doc_prof_m_btn_outline {
+  background: white;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  padding: 13px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.full_width {
+  width: 100%;
+}
+.span_full {
+  grid-column: span 2;
+}
+
+/* 8. RESPONSIVE QUERIES */
+@media (max-width: 1024px) {
+  .doc_prof_m_grid {
+    grid-template-columns: 1fr;
+  }
+  .doc_prof_m_info_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .doc_prof_m_root {
+    zoom: 1;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_prof_m_details_grid {
+    grid-template-columns: 1fr;
+  }
+  .doc_prof_m_info_grid {
+    grid-template-columns: 1fr;
+  }
+  .span_full {
+    grid-column: span 1;
+  }
+}
+/* 1. TABLET & LAPTOP VIEW (1024px) */
+@media (max-width: 1024px) {
+  .doc_prof_m_grid {
+    grid-template-columns: 1fr; /* Stack sidebar and main content */
+    gap: 20px;
+  }
+
+  .doc_prof_m_root {
+    padding: 20px;
+    zoom: 1; /* Normalize scaling for mobile devices */
+  }
+}
+
+/* 2. TABLET & SMALLER DESKTOP (768px) */
+@media (max-width: 768px) {
+  .doc_prof_m_details_grid {
+    grid-template-columns: 1fr; /* Stack shift and contact cards */
+  }
+
+  .doc_prof_m_img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* 3. MOBILE VIEW (480px) */
+@media (max-width: 480px) {
+  .doc_prof_m_stats_row {
+    grid-template-columns: 1fr; /* Single column stat nodes */
+    gap: 10px;
+  }
+
+  .doc_prof_m_btn_group {
+    flex-direction: column;
+  }
+
+  .password_modification_drawer {
+    padding: 15px !important;
+  }
+}
+/* =========================================================================
+   ELITE CENTERED MODAL OVERLAY ARCHITECTURE (PASSWORD MODIFICATION)
+   ========================================================================= */
+
+/* Backdrop covering the viewport to lock focus on the modal */
+.doc_prof_m_sidebar {
+  position: relative;
+}
+
+/* We style the password container as a fixed screen overlay */
+.password_modification_drawer {
+  position: fixed !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  z-index: 9999 !important;
+  border: 1px solid #e2e8f0 !important;
+  overflow: hidden;
+  padding: 0 !important; /* Managed by inner containers */
+  animation: modalScaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Smooth pop-in animation mapping scales */
+@keyframes modalScaleIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Modal Title bar design structure */
+.password_drawer_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.password_drawer_header h5 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.password_drawer_header svg {
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.password_drawer_header svg:hover {
+  color: #64748b;
+}
+
+/* Form block internal layout fields spacing specs */
+.password_modification_drawer form {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.password_input_field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.password_input_field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.password_input_field input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #1e293b;
+  outline: none;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.password_input_field input:focus {
+  border-color: #007acc;
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
+}
+
+/* Dynamic screen blur overlay backing layer */
+.doc_prof_m_modal_dimmer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+  animation: fadeInDimmer 0.2s ease forwards;
+}
+
+@keyframes fadeInDimmer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

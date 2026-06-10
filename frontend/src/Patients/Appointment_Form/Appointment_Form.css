@@ -1,0 +1,733 @@
+/* ==========================================================================
+   MEDICO+ HEALTH ENTERPRISE: APPOINTMENT FLOW MANAGEMENT SYSTEM
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.med_apt_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(16px) saturate(180%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  animation: medApt_backdropFade 0.4s ease;
+}
+
+.med_apt_container {
+  background: #ffffff;
+  width: 1200px;
+  height: 650px;
+  max-height: 85vh;
+  border-radius: 35px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.med_apt_step_discovery {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.med_apt_container.confirm_mode {
+  width: 500px;
+  height: 680px;
+  max-height: 90vh;
+  border-radius: 40px;
+}
+
+/* ==========================================================================
+   1. REGISTRY SUB-HEADERS (RECENT SPECIALISTS)
+   ========================================================================== */
+.recent_header_bar {
+  padding: 24px 40px;
+  background: #ffffff;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.recent_group {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  overflow: hidden;
+}
+
+.recent_group label {
+  font-size: 11px;
+  font-weight: 900;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+
+.recent_docs_list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+}
+
+.recent_doc_pill {
+  background: #f8fafc;
+  padding: 8px 18px 8px 8px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  border: 1.5px solid #e2e8f0;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.recent_doc_pill:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
+
+.recent_doc_pill.active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.pill_avatar {
+  width: 32px;
+  height: 32px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.med_close_btn {
+  background: #f1f5f9;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.med_close_btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   2. SHIFT SELECTION HOURLY WORKSPACE (SLOT PANE)
+   ========================================================================== */
+.med_apt_workspace {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+}
+
+.slot_pane {
+  width: 0;
+  background: #fcfdfe;
+  border-right: 0 solid #e2e8f0;
+  transition: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  opacity: 0;
+  height: 100%;
+}
+
+.slot_pane.active {
+  width: 380px;
+  border-right: 1.5px solid #f1f5f9;
+  opacity: 1;
+}
+
+.slot_pane_inner {
+  width: 380px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slot_pane_header h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.slot_pane_header p {
+  color: #3b82f6;
+  font-weight: 700;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+.date_picker_alt {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  padding: 12px 18px;
+  border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.date_picker_alt input {
+  border: none;
+  font-weight: 800;
+  color: #1e293b;
+  width: 100%;
+  outline: none;
+}
+
+/* Hourly Grid Selectors */
+.time_slot_list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.time_slot_list button {
+  padding: 10px 0px;
+  border-radius: 12px;
+  border: 1.5px solid #e2e8f0;
+  background: #ffffff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  transition: 0.2s;
+  cursor: pointer;
+  height: fit-content;
+}
+
+.time_slot_list button.active {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px -5px rgba(37, 99, 235, 0.3);
+}
+
+.time_slot_list button.past {
+  background: #f1f5f9;
+  color: #cbd5e1;
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+.time_slot_list button.slot_unselectable_booked {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fecaca;
+  /* text-decoration: line-through; */
+  cursor: not-allowed;
+}
+
+.time_slot_list button.slot_on_leave_red {
+  background: #fff7ed;
+  color: #c2410c;
+  border-color: #ffedd5;
+  cursor: not-allowed;
+}
+
+.proceed_prime_btn {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 18px;
+  border-radius: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.proceed_prime_btn:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.proceed_prime_btn:disabled {
+  background: #e2e8f0;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   3. DISCOVERY MATRICES (CLINICIAN DIRECTORIES)
+   ========================================================================== */
+.discovery_pane {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #ffffff;
+  height: 100%;
+}
+
+.filter_header {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.search_wrap,
+.select_wrap {
+  background: #f1f5f9;
+  padding: 14px 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  border: 1.5px solid transparent;
+  transition: 0.2s;
+}
+
+.search_wrap:focus-within,
+.select_wrap:focus-within {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.05);
+}
+
+.search_wrap input,
+.select_wrap select {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.doctor_bento_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding-bottom: 20px;
+}
+
+.bento_doc_card {
+  background: #ffffff;
+  border: 2px solid #f1f5f9;
+  padding: 20px 15px;
+  border-radius: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.bento_doc_card:hover {
+  transform: translateY(-8px);
+  border-color: #cbd5e1;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05);
+}
+
+.bento_doc_card.selected {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.bento_doc_card.doctor_status_leave_dim {
+  opacity: 0.6;
+}
+
+.bento_avatar {
+  width: 50px;
+  height: 50px;
+  background: #e0f2fe;
+  color: #0369a1;
+  border-radius: 16px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.bento_info strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.bento_info span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.active_tick {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #2563eb;
+}
+
+/* ==========================================================================
+   4. STEP 2 & 3: GATEWAY CHECKOUT & VERIFICATION MODULES
+   ========================================================================== */
+.med_confirmation_view {
+  padding: 35px 40px;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_header {
+  margin-bottom: 20px;
+}
+
+.confirm_header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 10px 0 0 0;
+}
+
+.back_to_edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #64748b;
+  font-weight: 800;
+  cursor: pointer;
+  padding: 0;
+}
+
+.confirm_card {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 35px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.confirm_avatar {
+  width: 80px;
+  height: 80px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 0 auto 15px;
+}
+
+.confirm_card h3 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+}
+
+.conf_doc_title {
+  color: #64748b;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin: 0 0 15px 0;
+}
+
+.summary_pill_container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.s_pill {
+  background: #f1f5f9;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1e293b;
+}
+
+.notes_field {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.notes_field label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.notes_field textarea {
+  width: 100%;
+  height: 95px;
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: none;
+  outline: none;
+}
+
+.notes_field textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.final_book_btn {
+  width: 100%;
+  padding: 16px;
+  background: #0f172a;
+  color: #ffffff;
+  border: none;
+  border-radius: 22px;
+  font-weight: 900;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto;
+}
+
+.final_book_btn:hover {
+  background: #2563eb;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.2);
+}
+
+/* ==========================================================================
+   5. CROSS-DEVICE RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media screen and (max-width: 1250px) {
+  .med_apt_container {
+    width: 95%;
+    height: 90vh;
+    max-height: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .doctor_bento_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .med_apt_container {
+    flex-direction: column;
+    border-radius: 24px;
+    height: 95vh;
+  }
+
+  .med_apt_workspace {
+    flex-direction: column-reverse;
+  }
+
+  /*    CRITICAL RESPONSIVE TWEEKS: Drops side panel maps layout, converting slot configuration submenus into sliding sheet interfaces */
+  .slot_pane.active {
+    width: 100%;
+    height: 50%;
+    border-right: none;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .slot_pane_inner {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .recent_header_bar {
+    padding: 16px;
+  }
+
+  .recent_group label {
+    display: none; /* Strip string overhead label grids on mobile factors */
+  }
+
+  .doctor_bento_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .med_confirmation_view {
+    padding: 20px;
+  }
+
+  .summary_pill_container {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* ==========================================================================
+   6. CORE UTILITIES & SCROLLBAR SYSTEMS
+   ========================================================================== */
+@keyframes medApt_backdropFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spin {
+  animation: medApt_inner_spin 1s linear infinite;
+}
+@keyframes medApt_inner_spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.time_slot_list::-webkit-scrollbar,
+.discovery_pane::-webkit-scrollbar,
+.med_confirmation_view::-webkit-scrollbar {
+  width: 5px;
+}
+
+.time_slot_list::-webkit-scrollbar-thumb,
+.discovery_pane::-webkit-scrollbar-thumb,
+.med_confirmation_view::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.reschedule_notice_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  color: #c2410c;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.reschedule_locked_splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding: 40px;
+  background: #f8fafc;
+  border: 2px dashed #e2e8f0;
+  border-radius: 16px;
+}
+
+.reschedule_locked_splash h3 {
+  font-size: 1.1rem;
+  color: #0f172a;
+  margin: 16px 0 6px 0;
+  font-weight: 700;
+}
+
+.reschedule_locked_splash p {
+  font-size: 0.85rem;
+  color: #64748b;
+  max-width: 320px;
+  line-height: 1.5;
+}
+
+/* Ensure the grid avatar scales images correctly and retains shape */
+.bento_avatar {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bento_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure the summary preview card handles the profile picture smoothly */
+.confirm_avatar {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure the recent specialists horizontal bar pills scale images perfectly */
+.pill_avatar {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill_avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

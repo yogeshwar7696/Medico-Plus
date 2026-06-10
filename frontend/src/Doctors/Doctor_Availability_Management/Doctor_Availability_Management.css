@@ -1,0 +1,1044 @@
+:root {
+  --doc-avail-primary: #007acc;
+  --doc-avail-primary-light: #f0f7ff;
+  --doc-avail-success: #10b981;
+  --doc-avail-warning: #f59e0b;
+  --doc-avail-danger: #ef4444;
+  --doc-avail-text: #1e293b;
+  --doc-avail-text-muted: #64748b;
+  --doc-avail-border: #e2e8f0;
+  --doc-avail-bg: #f8fbff;
+}
+
+.doc_avai_m_root {
+  background: var(--doc-avail-bg);
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  zoom: 0.8;
+}
+
+.doc_avai_m_section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 15px;
+}
+
+.doc_avai_m_title_elite {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--doc-avail-text);
+  margin: 0;
+}
+
+.doc_avai_m_highlight {
+  color: var(--doc-avail-primary);
+  font-weight: 400;
+}
+
+.doc_avai_m_subtitle {
+  color: var(--doc-avail-text-muted);
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
+}
+
+.doc_avai_m_btn_primary {
+  background: var(--sa-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.doc_avai_m_btn_primary:hover {
+  transform: translateY(-2px);
+}
+
+.doc_avai_m_row_top {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 24px;
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.doc_avai_m_card_refined {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid var(--doc-avail-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.01);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc_avai_m_slots_module {
+  height: auto;
+}
+
+.doc_avai_m_slots_body_scroller {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.doc_avai_m_slots_body_scroller::-webkit-scrollbar {
+  width: 5px;
+}
+
+.doc_avai_m_slots_body_scroller::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.doc_avai_m_label_micro {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--doc-avail-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.doc_avai_m_cal_nav_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.doc_avai_m_cal_title {
+  font-size: 1.1rem;
+  color: var(--doc-avail-text);
+  font-weight: 700;
+  margin: 0;
+}
+
+.doc_avai_m_cal_title span {
+  color: var(--doc-avail-primary);
+  font-weight: 400;
+}
+
+.doc_avai_m_nav_btn_lite {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--doc-avail-border);
+  background: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--doc-avail-text-muted);
+}
+
+.doc_avai_m_cal_days_header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--doc_avail-text-muted);
+  margin-bottom: 12px;
+}
+
+.doc_avai_m_cal_date_grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.doc_avai_m_day_blank {
+  aspect-ratio: 1/1;
+}
+
+.doc_avai_m_day_node {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #f1f5f9;
+  color: #475569;
+  transition: all 0.15s ease;
+}
+
+.doc_avai_m_day_node:hover:not(.doc_avai_m_past) {
+  background: #e2e8f0;
+}
+
+.doc_avai_m_day_node.doc_avai_m_active {
+  background: var(--doc-avail-primary);
+  color: white;
+}
+
+.doc_avai_m_day_node.doc_avai_m_past {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f1f5f9;
+}
+
+.doc_avai_m_slots_hint {
+  font-size: 0.8rem;
+  color: var(--doc-avail-text-muted);
+  margin: 4px 0 16px 0;
+}
+
+.doc_avai_m_loader_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: var(--doc-avail-primary);
+}
+
+.doc_avai_m_spin {
+  animation: doc_avai_m_spinning 1s linear infinite;
+  font-size: 1.5rem;
+}
+
+@keyframes doc_avai_m_spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.doc_avai_m_slot_grid_layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 10px;
+}
+
+.doc_avai_m_slot_card_elite {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--doc-avail-border);
+  background: white;
+  box-sizing: border-box;
+}
+
+.doc_avai_m_slot_meta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc_avai_m_s_time {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--doc-avail-text);
+  white-space: nowrap;
+}
+
+.doc_avai_m_s_label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--doc-avail-text-muted);
+  letter-spacing: 0.3px;
+}
+
+.doc_avai_m_slot_card_elite.doc_avai_m_available {
+  border-left: 4px solid var(--doc-avail-success);
+}
+
+.doc_avai_m_slot_card_elite.doc_avai_m_unavailable {
+  border-left: 4px solid var(--doc-avail-danger);
+  background: #fee2e2;
+}
+
+.doc_avai_m_slot_card_elite.doc_avai_m_pending_admin {
+  background-color: #fffbeb !important;
+  border: 1px solid #fde68a !important;
+  border-left: 4px solid var(--doc-avail-warning) !important;
+}
+
+.doc_avai_m_slot_check_indicator {
+  display: flex;
+  align-items: center;
+}
+
+.doc_avai_m_empty_slots_notice {
+  grid-column: span 2;
+  padding: 24px;
+  color: var(--doc-avail-text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.doc_avai_m_slots_footer {
+  margin-top: 16px;
+  border-top: 1px solid var(--doc-avail-border);
+  padding-top: 14px;
+  text-align: right;
+}
+
+.doc_avai_m_history_card {
+  width: 100%;
+}
+
+.doc_avai_m_history_header_flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--doc-avail-border);
+  padding-bottom: 14px;
+}
+
+.doc_avai_m_history_header_flex h3 {
+  font-size: 1rem;
+  margin: 0;
+  color: var(--doc-avail-text);
+  font-weight: 700;
+}
+
+.doc_avai_m_history_header_flex h3 small {
+  font-size: 0.75rem;
+  color: var(--doc-avail-text-muted);
+  font-weight: 400;
+}
+
+.doc_avai_m_btn_history_modal_trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  padding: 6px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: #475569;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.doc_avai_m_line_history_stack {
+  display: flex;
+  flex-direction: column;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.doc_avai_m_line_history_stack::-webkit-scrollbar {
+  width: 5px;
+}
+
+.doc_avai_m_line_history_stack::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.doc_avai_m_history_line_node {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--doc-avail-border);
+  gap: 16px;
+}
+
+.doc_avai_m_history_line_node:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.doc_avai_m_history_line_node:first-child {
+  padding-top: 0;
+}
+
+.doc_avai_m_history_line_left_stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.doc_avai_m_history_line_badge_row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc_avai_m_history_line_badge_row strong {
+  font-size: 0.85rem;
+  color: var(--doc-avail-text);
+}
+
+.doc_avai_m_history_line_reason_preview {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--doc-avail-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc_avai_m_history_line_right_flex {
+  flex-shrink: 0;
+}
+
+.doc_avai_m_table_container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.doc_avai_m_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doc_avai_m_table th {
+  background: #f8fafc;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  color: var(--doc-avail-text-muted);
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--doc-avail-border);
+  font-weight: 700;
+}
+
+.doc_avai_m_table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.doc_avai_m_type_pill {
+  font-size: 0.7rem;
+  background: var(--doc-avail-primary-light);
+  color: var(--doc-avail-primary);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.doc_avai_m_status_pill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.doc_avai_m_status_pill.doc_avai_m_pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+.doc_avai_m_status_pill.doc_avai_m_approved {
+  background: #d1fae5;
+  color: #069669;
+}
+.doc_avai_m_status_pill.doc_avai_m_rejected {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.doc_avai_m_empty_msg_line {
+  font-size: 0.8rem;
+  color: var(--doc-avail-text-muted);
+  text-align: center;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+.doc_avai_m_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.doc_avai_m_modal_card_compact {
+  background: white;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.doc_avai_m_conflict_banner {
+  background: #fee2e2;
+  color: #991b1b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.doc_avai_m_modal_form_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.doc_avai_m_input_stack {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doc_avai_m_input_stack label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--doc-avail-text-muted);
+}
+
+.doc_avai_m_input_stack input,
+.doc_avai_m_input_stack select,
+.doc_avai_m_input_stack textarea {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--doc-avail-border);
+  font-size: 0.85rem;
+  outline: none;
+  background: #f8fafc;
+  color: var(--doc-avail-text);
+}
+
+.doc_avai_m_input_stack textarea {
+  resize: none;
+}
+
+.doc_avai_m_modal_footer_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-top: 1px solid var(--doc-avail-border);
+  padding-top: 14px;
+  margin-top: 16px;
+}
+
+.doc_avai_m_btn_cancel {
+  background: white;
+  border: 1px solid var(--doc-avail-border);
+  color: var(--doc-avail-text);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.doc_avai_m_btn_cancel:hover {
+  background: #f1f5f9;
+}
+
+.doc_avai_m_text_right {
+  text-align: right;
+}
+
+.doc_avai_m_page_fade_in {
+  animation: doc_avai_m_fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes doc_avai_m_fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- SECTION: FULL OPERATIONAL RESPONSIVE BREAKPOINT QUERY STACK --- */
+@media (max-width: 1024px) {
+  .doc_avai_m_row_top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .doc_avai_m_slots_module {
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_avai_m_section_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .doc_avai_m_btn_primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doc_avai_m_history_header_flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .doc_avai_m_btn_history_modal_trigger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doc_avai_m_modal_card_compact {
+    padding: 16px;
+  }
+
+  .doc_avai_m_modal_form_row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .doc_avai_m_root {
+    padding: 16px;
+  }
+
+  .doc_avai_m_slot_grid_layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc_avai_m_history_line_node {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .doc_avai_m_history_line_right_flex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px dashed var(--doc-avail-border);
+    padding-top: 8px;
+  }
+}
+.doc_avai_m_modal_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items:self-start;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.doc_avai_m_modal_card_compact {
+  margin-top: 10%;
+  background: white;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.doc_avai_m_modal_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.doc_avai_m_modal_form_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.doc_avai_m_input_stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.doc_avai_m_input_stack label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+}
+.doc_avai_m_input_stack input,
+.doc_avai_m_input_stack select,
+.doc_avai_m_input_stack textarea {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.doc_avai_m_modal_footer_actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.doc_avai_m_conflict_banner {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.doc_avai_m_dash_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+.doc_avai_m_head_btns {
+  display: flex;
+  gap: 10px;
+}
+
+.doc_avai_m_dash_header_text {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc_avai_m_dash_header_text h1 {
+  font-size: 1.85rem;
+  margin: 0;
+  font-weight: 800;
+  color: var(--sa-text);
+}
+
+.doc_avai_m_dash_header_text h1 span {
+  color: var(--sa-primary);
+}
+
+.doc_avai_m_dash_header_text p {
+  font-size: 0.9rem;
+  color: var(--sa-text-muted);
+  margin-top: 5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.doc_avai_m_dash_btn_primary {
+  flex-shrink: 0;
+  background: var(--sa-primary);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 122, 204, 0.2);
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.doc_avai_m_dash_btn_primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: var(--sa-text-muted);
+}
+
+.doc_avai_m_dash_btn_primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 122, 204, 0.3);
+}
+
+.spin {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_avai_m_dash_header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .doc_avai_m_dash_btn_primary {
+    width: fit-content;
+    justify-content: center;
+  }
+}
+/* --- CLINICAL MATRIX SLOTS RESPONSIVE GRID LAYOUT (FORCE 2 PER ROW) --- */
+.doc_avai_m_slot_grid_layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  padding: 8px 4px;
+  width: 100%;
+}
+
+/* --- PREMIUM BASE MEDICO SLOT CARD DESIGN --- */
+.doc_avai_m_slot_card_elite {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spaced text tracking metrics */
+  padding: 12px 17px;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  border: 2px solid transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.doc_avai_m_slot_card_elite:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Force details timeline metric strings onto the exact same inline row */
+.doc_avai_m_slot_meta {
+  display: flex;
+  flex-direction: row; /* Arranges timing text and status tokens inline side-by-side */
+  align-items: center;
+  gap: 12px; /* Gapping grid separation width between strings */
+}
+
+.doc_avai_m_s_time {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+.doc_avai_m_s_label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(25, 25, 25, 0.04); /* Soft fallback inner shell badge */
+}
+
+.doc_avai_m_slot_check_indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(25, 25, 25, 0.04);
+  flex-shrink: 0;
+}
+
+/* ===================================================================
+   VIBRANT HIGH-CONTRAST DISTINCT STATUS BACKGROUND THEMING VECTORS
+   =================================================================== */
+
+/* STATE 1: VACANT AVAILABLE OPERATIONAL SHIFT HOUR SLOT */
+.doc_avai_m_slot_card_elite.doc_avai_m_status_available {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 2px solid #e2e8f0;
+}
+.doc_avai_m_status_available .doc_avai_m_s_time {
+  color: #1e293b;
+}
+.doc_avai_m_status_available .doc_avai_m_s_label {
+  color: #64748b;
+  background: #f1f5f9;
+}
+
+/* STATE 2: ACTIVE SECURED PATIENT REGISTRATION ENCOUNTER BOOKING */
+.doc_avai_m_slot_card_elite.doc_avai_m_status_patient_booked {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #bbf7d0;
+  box-shadow: 0 4px 10px rgba(22, 163, 74, 0.06);
+}
+.doc_avai_m_status_patient_booked .doc_avai_m_s_time {
+  color: #14532d;
+}
+.doc_avai_m_status_patient_booked .doc_avai_m_s_label {
+  color: #16a34a;
+  background: rgba(22, 163, 74, 0.1);
+}
+.doc_avai_m_status_patient_booked .doc_avai_m_slot_check_indicator {
+  background: rgba(22, 163, 74, 0.15);
+}
+
+/* STATE 3: RECORDED ABSENCE PENDING AUDIT MANAGEMENT SUBMISSION */
+.doc_avai_m_slot_card_elite.doc_avai_m_status_leave_pending {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border: 2px solid #fde68a;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.06);
+}
+.doc_avai_m_status_leave_pending .doc_avai_m_s_time {
+  color: #78350f;
+}
+.doc_avai_m_status_leave_pending .doc_avai_m_s_label {
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.1);
+}
+.doc_avai_m_status_leave_pending .doc_avai_m_slot_check_indicator {
+  background: rgba(217, 119, 6, 0.15);
+}
+
+/* STATE 4: APPROVED ABSENCE SIGN-OFF SYSTEM BLOCK LOCKED OUT */
+.doc_avai_m_slot_card_elite.doc_avai_m_status_leave_approved {
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  border: 2px solid #fecaca;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.06);
+}
+.doc_avai_m_status_leave_approved .doc_avai_m_s_time {
+  color: #7f1d1d;
+}
+.doc_avai_m_status_leave_approved .doc_avai_m_s_label {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+}
+.doc_avai_m_status_leave_approved .doc_avai_m_slot_check_indicator {
+  background: rgba(220, 38, 38, 0.15);
+}
+@media (max-width: 1120px) {
+  .doc_avai_m_row_top {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .doc_avai_m_slot_grid_layout {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .doc_avai_m_slots_module {
+    height: auto;
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .doc_avai_m_root {
+    padding: 20px;
+  }
+
+  .doc_avai_m_section_header,
+  .doc_avai_m_dash_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .doc_avai_m_head_btns {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .doc_avai_m_btn_primary,
+  .doc_avai_m_dash_btn_primary {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  .doc_avai_m_history_header_flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .doc_avai_m_btn_history_modal_trigger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doc_avai_m_modal_card_compact {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .doc_avai_m_modal_form_row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .doc_avai_m_root {
+    padding: 14px;
+  }
+
+  .doc_avai_m_slot_grid_layout {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .doc_avai_m_slot_card_elite {
+    padding: 14px;
+  }
+
+  .doc_avai_m_slot_meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .doc_avai_m_history_line_node {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .doc_avai_m_history_line_right_flex {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px dashed var(--doc-avail-border);
+    padding-top: 10px;
+    margin-top: 2px;
+  }
+}
